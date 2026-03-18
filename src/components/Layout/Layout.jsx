@@ -71,18 +71,16 @@ export function Section({
   return (
     <Tag
       className={`${padded ? "section-padded" : ""} ${className || ""}`}
-      style={styleProp}
+      style={{
+        maxWidth: isFull ? "100%" : maxWidthValue,
+        marginLeft: isFull ? undefined : "auto",
+        marginRight: isFull ? undefined : "auto",
+        width: "100%",
+        boxSizing: "border-box",
+        ...styleProp,
+      }}
     >
-      <div
-        style={{
-          maxWidth: isFull ? "100%" : maxWidthValue,
-          marginLeft: isFull ? undefined : "auto",
-          marginRight: isFull ? undefined : "auto",
-          width: "100%",
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </Tag>
   );
 }
