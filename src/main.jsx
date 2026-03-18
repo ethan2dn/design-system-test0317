@@ -24,7 +24,7 @@ function Chip({ label, active, onClick }) {
         fontSize: 11,
         fontWeight: active ? 600 : 400,
         cursor: "pointer",
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         transition: "all 0.12s",
         lineHeight: "16px",
       }}
@@ -172,7 +172,7 @@ function App() {
           border: "1px solid rgba(0,0,0,0.1)",
           borderRadius: 12,
           boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-          fontFamily: "Pretendard, sans-serif",
+          fontFamily: "var(--font-pretendard)",
           userSelect: dragging ? "none" : "auto",
         }}
       >
@@ -251,12 +251,12 @@ function App() {
             <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", margin: "8px 0" }} />
 
             <ControlRow label="Konbini">
-              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "var(--font-pretendard)", color: "#666" }}>
                 <input type="checkbox" checked={isKonbini} onChange={(e) => setIsKonbini(e.target.checked)} style={{ accentColor: "#151515" }} />
                 콘비니 결제
               </label>
               {isKonbini && (
-                <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666", marginLeft: 8 }}>
+                <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "var(--font-pretendard)", color: "#666", marginLeft: 8 }}>
                   <input type="checkbox" checked={hasPaymentLink} onChange={(e) => setHasPaymentLink(e.target.checked)} style={{ accentColor: "#151515" }} />
                   결제 링크
                 </label>
@@ -300,7 +300,7 @@ function App() {
             </ControlRow>
 
             <ControlRow label="Points">
-              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "var(--font-pretendard)", color: "#666" }}>
                 <input type="checkbox" checked={showPoints} onChange={(e) => setShowPoints(e.target.checked)} style={{ accentColor: "#151515" }} />
                 적립예정 표시
               </label>
@@ -309,7 +309,7 @@ function App() {
             <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", margin: "8px 0" }} />
 
             <ControlRow label="Buttons">
-              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "var(--font-pretendard)", color: "#666" }}>
                 <input type="checkbox" checked={singleButton} onChange={(e) => setSingleButton(e.target.checked)} style={{ accentColor: "#151515" }} />
                 1개 버튼 (홈으로 가기만)
               </label>

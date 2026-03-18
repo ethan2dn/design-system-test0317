@@ -61,7 +61,7 @@ function Logo({ variant = "logo", stageName = "STAGENAME", theme = "light", logo
   if (variant === "text") {
     return (
       <span style={{
-        fontSize: 16, fontWeight: 700, color: textColor, fontFamily: "Pretendard, sans-serif",
+        fontSize: 16, fontWeight: 700, color: textColor, fontFamily: "var(--font-pretendard)",
         overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
       }}>
         {stageName}
@@ -75,7 +75,7 @@ function Logo({ variant = "logo", stageName = "STAGENAME", theme = "light", logo
       return <LogoImage src={logoImage} device={device} />;
     }
     return (
-      <span style={{ fontSize: 20, fontWeight: 800, color: textColor, letterSpacing: -0.5, fontFamily: "Pretendard, sans-serif" }}>
+      <span style={{ fontSize: 20, fontWeight: 800, color: textColor, letterSpacing: -0.5, fontFamily: "var(--font-pretendard)" }}>
         LOGO
       </span>
     );
@@ -88,12 +88,12 @@ function Logo({ variant = "logo", stageName = "STAGENAME", theme = "light", logo
         {logoImage ? (
           <LogoImage src={logoImage} device={device} />
         ) : (
-          <span style={{ fontSize: 20, fontWeight: 800, color: textColor, letterSpacing: -0.5, fontFamily: "Pretendard, sans-serif", flexShrink: 0 }}>
+          <span style={{ fontSize: 20, fontWeight: 800, color: textColor, letterSpacing: -0.5, fontFamily: "var(--font-pretendard)", flexShrink: 0 }}>
             LOGO
           </span>
         )}
         <span style={{
-          fontSize: 13, fontWeight: 600, color: v(`${theme}/text/secondary-a`), fontFamily: "Pretendard, sans-serif",
+          fontSize: 13, fontWeight: 600, color: v(`${theme}/text/secondary-a`), fontFamily: "var(--font-pretendard)",
           overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
         }}>
           {stageName}
@@ -183,7 +183,7 @@ function CountBadge({ count = 9, theme = "light" }) {
       <span
         ref={textRef}
         style={{
-          fontFamily: "Pretendard, sans-serif",
+          fontFamily: "var(--font-pretendard)",
           fontSize: "var(--typo-11-caption-semibold-font-size)",
           fontWeight: "var(--typo-11-caption-semibold-font-weight)",
           lineHeight: "var(--typo-11-caption-semibold-line-height)",
@@ -270,7 +270,7 @@ function NavMenuItem({ label, active, theme }) {
         padding: "6px 8px",
         cursor: "pointer",
         borderRadius: 6,
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         whiteSpace: "nowrap",
         transition: "color 0.15s, background 0.15s",
         background: hovered ? hoverBg : "transparent",
@@ -491,7 +491,7 @@ export default function NavigationBar({
     width: "100%",
     background: bgColor,
     borderBottom: showBorder ? `1px solid ${borderColor}` : "none",
-    fontFamily: "Pretendard, sans-serif",
+    fontFamily: "var(--font-pretendard)",
     position: "relative",
     ...styleProp,
   };

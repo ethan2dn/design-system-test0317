@@ -36,7 +36,7 @@ const rows = buildRows(tokens.typography);
 
 function TypographyTable() {
   return (
-    <div style={{ padding: "24px", fontFamily: "Pretendard, sans-serif" }}>
+    <div style={{ padding: "24px", fontFamily: "var(--font-pretendard)" }}>
       <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: "var(--color-light-text-primary)" }}>
         Typography Tokens
       </h1>
@@ -127,7 +127,7 @@ function TypographyTable() {
                     >
                       <div
                         style={{
-                          fontFamily: "Pretendard, sans-serif",
+                          fontFamily: "var(--font-pretendard)",
                           fontSize: token.fontSize,
                           fontWeight: token.fontWeight,
                           lineHeight: `${token.lineHeight}px`,

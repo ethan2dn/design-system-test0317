@@ -38,7 +38,7 @@ export function PageLayout({
       style={{
         background: v(`${theme}/bg/base`),
         color: v(`${theme}/text/primary`),
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         ...styleProp,
       }}
     >

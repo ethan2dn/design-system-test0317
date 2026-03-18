@@ -30,7 +30,7 @@ function Chip({ label, active, onClick }) {
         fontSize: 11,
         fontWeight: active ? 600 : 400,
         cursor: "pointer",
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         transition: "all 0.12s",
         lineHeight: "16px",
       }}
@@ -177,7 +177,7 @@ function PlaygroundUI() {
     : { left: 16, top: 16 };
 
   return (
-    <div style={{ position: "relative", height: "100vh", overflow: "hidden", fontFamily: "Pretendard, sans-serif" }}>
+    <div style={{ position: "relative", height: "100vh", overflow: "hidden", fontFamily: "var(--font-pretendard)" }}>
       {/* Page preview — iframe 기반 */}
       <div
         style={{
@@ -216,7 +216,7 @@ function PlaygroundUI() {
           border: "1px solid rgba(0,0,0,0.1)",
           borderRadius: 12,
           boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-          fontFamily: "Pretendard, sans-serif",
+          fontFamily: "var(--font-pretendard)",
           userSelect: dragging ? "none" : "auto",
         }}
       >
@@ -422,7 +422,7 @@ function SpecTable({ headers, rows }) {
         width: "100%",
         borderCollapse: "collapse",
         fontSize: 13,
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         marginBottom: 16,
       }}
     >
@@ -529,7 +529,7 @@ function SpecCode({ children }) {
 
 function SpecUI() {
   return (
-    <div style={{ fontFamily: "Pretendard, sans-serif", padding: 32, maxWidth: 960, margin: "0 auto" }}>
+    <div style={{ fontFamily: "var(--font-pretendard)", padding: 32, maxWidth: 960, margin: "0 auto" }}>
       <h2 style={{ fontSize: 24, fontWeight: 700, margin: "0 0 4px" }}>
         [P1] 땡큐 페이지 — 컴포넌트 명세서
       </h2>

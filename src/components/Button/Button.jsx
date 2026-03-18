@@ -207,7 +207,7 @@ export default function Button({
     borderRadius: finalRadius,
     opacity: isDisabled ? 0.4 : (colors.opacity || 1),
     // Typography (CSS variable references)
-    fontFamily: "Pretendard, sans-serif",
+    fontFamily: "var(--font-pretendard)",
     fontSize: typo.fontSize,
     fontWeight: typo.fontWeight,
     lineHeight: typo.lineHeight,

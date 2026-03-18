@@ -50,7 +50,7 @@ function IconsPage() {
   }, [filtered]);
 
   return (
-    <div style={{ padding: 24, fontFamily: "Pretendard, sans-serif" }}>
+    <div style={{ padding: 24, fontFamily: "var(--font-pretendard)" }}>
       <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: "var(--color-light-text-primary)" }}>
         Icon Components
       </h1>
@@ -80,7 +80,7 @@ function IconsPage() {
             borderRadius: 6,
             fontSize: 13,
             width: 220,
-            fontFamily: "Pretendard, sans-serif",
+            fontFamily: "var(--font-pretendard)",
           }}
         />
 
@@ -150,7 +150,7 @@ function IconsPage() {
             fontWeight: activeCategory === "all" ? 700 : 400,
             color: activeCategory === "all" ? "var(--color-light-text-primary)" : "var(--color-light-text-quaternary)",
             marginBottom: -2,
-            fontFamily: "Pretendard, sans-serif",
+            fontFamily: "var(--font-pretendard)",
           }}
         >
           All
@@ -175,7 +175,7 @@ function IconsPage() {
                 fontWeight: isActive ? 700 : 400,
                 color: isActive ? "var(--color-light-text-primary)" : "var(--color-light-text-quaternary)",
                 marginBottom: -2,
-                fontFamily: "Pretendard, sans-serif",
+                fontFamily: "var(--font-pretendard)",
               }}
             >
               {cat}

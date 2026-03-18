@@ -45,7 +45,7 @@ function Chip({ label, active, onClick, small }) {
         fontSize: small ? 11 : 12,
         fontWeight: active ? 600 : 400,
         cursor: "pointer",
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         transition: "all 0.12s",
       }}
     >
@@ -87,7 +87,7 @@ function Toggle({ label, checked, onChange }) {
         fontSize: 12,
         color: "var(--color-light-text-tertiary)",
         cursor: "pointer",
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
       }}
     >
       <input
@@ -154,7 +154,7 @@ export const Playground = {
 
 export const AllTypes = {
   render: () => (
-    <div style={{ fontFamily: "Pretendard, sans-serif", padding: 24 }}>
+    <div style={{ fontFamily: "var(--font-pretendard)", padding: 24 }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Navigation Top Bar</h2>
       <p style={{ fontSize: 13, color: "var(--color-light-text-quaternary)", marginBottom: 24 }}>
         GNB 타입별 미리보기 (Mobile &amp; PC × Light &amp; Dark)
@@ -332,7 +332,7 @@ function PlaygroundUI() {
   };
 
   return (
-    <div style={{ fontFamily: "Pretendard, sans-serif", padding: 24 }}>
+    <div style={{ fontFamily: "var(--font-pretendard)", padding: 24 }}>
       <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 4, color: "var(--color-light-text-primary)" }}>
         NavigationBar Playground
       </h2>
@@ -492,7 +492,7 @@ function PlaygroundUI() {
                           background: "var(--color-light-bg-base)",
                           fontSize: 11,
                           cursor: "pointer",
-                          fontFamily: "Pretendard, sans-serif",
+                          fontFamily: "var(--font-pretendard)",
                           color: "var(--color-light-text-tertiary)",
                         }}
                       >
@@ -538,7 +538,7 @@ function PlaygroundUI() {
                     borderRadius: 6,
                     fontSize: 12,
                     width: 140,
-                    fontFamily: "Pretendard, sans-serif",
+                    fontFamily: "var(--font-pretendard)",
                   }}
                 />
               </ControlRow>
@@ -567,7 +567,7 @@ function PlaygroundUI() {
                             borderRadius: 6,
                             fontSize: 12,
                             width: 120,
-                            fontFamily: "Pretendard, sans-serif",
+                            fontFamily: "var(--font-pretendard)",
                             background: "var(--color-light-bg-base)",
                           }}
                         />
@@ -597,7 +597,7 @@ function PlaygroundUI() {
                         fontSize: 11,
                         color: "var(--color-light-text-tertiary)",
                         cursor: "pointer",
-                        fontFamily: "Pretendard, sans-serif",
+                        fontFamily: "var(--font-pretendard)",
                       }}
                     >
                       + Add menu
@@ -736,7 +736,7 @@ function PlaygroundUI() {
                                 background: slot.useCustom && slot.customImage ? "var(--color-light-bg-grouped-strong)" : "var(--color-light-bg-base)",
                                 fontSize: 11,
                                 cursor: "pointer",
-                                fontFamily: "Pretendard, sans-serif",
+                                fontFamily: "var(--font-pretendard)",
                                 color: "var(--color-light-text-tertiary)",
                               }}
                             >
@@ -801,7 +801,7 @@ function PlaygroundUI() {
                       borderRadius: 6,
                       fontSize: 12,
                       width: 80,
-                      fontFamily: "Pretendard, sans-serif",
+                      fontFamily: "var(--font-pretendard)",
                     }}
                   />
                 )}
@@ -819,7 +819,7 @@ function PlaygroundUI() {
                       borderRadius: 6,
                       fontSize: 12,
                       width: 80,
-                      fontFamily: "Pretendard, sans-serif",
+                      fontFamily: "var(--font-pretendard)",
                     }}
                   />
                 )}

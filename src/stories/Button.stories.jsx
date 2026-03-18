@@ -308,7 +308,7 @@ function Section({ title, children }) {
           marginBottom: 14,
           paddingBottom: 6,
           borderBottom: "1px solid var(--color-light-border-divider-weaker)",
-          fontFamily: "Pretendard, sans-serif",
+          fontFamily: "var(--font-pretendard)",
         }}
       >
         {title}
@@ -319,7 +319,7 @@ function Section({ title, children }) {
 }
 
 const mono = "'SF Mono', 'Fira Code', monospace";
-const tableStyle = { borderCollapse: "collapse", fontFamily: "Pretendard, sans-serif" };
+const tableStyle = { borderCollapse: "collapse", fontFamily: "var(--font-pretendard)" };
 const thStyle = {
   padding: "8px 14px",
   textAlign: "left",
@@ -357,7 +357,7 @@ function Chip({ label, active, onClick }) {
         fontSize: 12,
         fontWeight: active ? 600 : 400,
         cursor: "pointer",
-        fontFamily: "Pretendard, sans-serif",
+        fontFamily: "var(--font-pretendard)",
         transition: "all 0.12s",
       }}
     >
@@ -448,7 +448,7 @@ function PlaygroundUI() {
   };
 
   return (
-    <div style={{ fontFamily: "Pretendard, sans-serif", padding: 24 }}>
+    <div style={{ fontFamily: "var(--font-pretendard)", padding: 24 }}>
       <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 4, color: "var(--color-light-text-primary)" }}>
         Button Playground
       </h2>
@@ -542,7 +542,7 @@ function PlaygroundUI() {
                     borderRadius: 6,
                     fontSize: 13,
                     width: 160,
-                    fontFamily: "Pretendard, sans-serif",
+                    fontFamily: "var(--font-pretendard)",
                   }}
                 />
               </ControlRow>
@@ -753,7 +753,7 @@ function SpecSection2({ title, children }) {
 
 function SpecTable2({ headers, rows }) {
   return (
-    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, fontFamily: "Pretendard, sans-serif", marginBottom: 16 }}>
+    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, fontFamily: "var(--font-pretendard)", marginBottom: 16 }}>
       <thead>
         <tr>
           {headers.map((h, i) => (
@@ -784,7 +784,7 @@ function SpecNote2({ children }) {
 
 function SpecUI() {
   return (
-    <div style={{ fontFamily: "Pretendard, sans-serif", padding: 32, maxWidth: 960, margin: "0 auto" }}>
+    <div style={{ fontFamily: "var(--font-pretendard)", padding: 32, maxWidth: 960, margin: "0 auto" }}>
       <h2 style={{ fontSize: 24, fontWeight: 700, margin: "0 0 4px" }}>Button — 컴포넌트 명세서</h2>
       <p style={{ fontSize: 13, color: "#999", margin: "0 0 8px", fontFamily: specMono }}>Figma: Buttons component set &middot; 480 variants</p>
       <p style={{ fontSize: 13, color: "#666", margin: "0 0 32px" }}>피그마 Buttons 컴포넌트셋 기반. CSS Custom Properties(디자인 토큰)로 모든 색상/타이포를 제어하며, light/dark 테마를 지원합니다.</p>

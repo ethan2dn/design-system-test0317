@@ -14,7 +14,7 @@ const Cell = ({ children, header, mono, style }) => (
       padding: "10px 16px",
       fontSize: 13,
       fontWeight: header ? 600 : 400,
-      fontFamily: mono ? "monospace" : "Pretendard, sans-serif",
+      fontFamily: mono ? "monospace" : "var(--font-pretendard)",
       borderBottom: "1px solid var(--color-light-border-default-a)",
       background: header ? "var(--color-light-surface-form-grey-weak-b)" : "transparent",
       color: "var(--color-light-text-primary)",
@@ -42,19 +42,19 @@ const Tag = ({ children, color = "#333" }) => (
 );
 
 const SectionTitle = ({ children }) => (
-  <h2 style={{ fontSize: 20, fontWeight: 700, margin: "40px 0 8px", fontFamily: "Pretendard, sans-serif" }}>
+  <h2 style={{ fontSize: 20, fontWeight: 700, margin: "40px 0 8px", fontFamily: "var(--font-pretendard)" }}>
     {children}
   </h2>
 );
 
 const Desc = ({ children }) => (
-  <p style={{ fontSize: 13, color: "#666", margin: "0 0 16px", fontFamily: "Pretendard, sans-serif" }}>
+  <p style={{ fontSize: 13, color: "#666", margin: "0 0 16px", fontFamily: "var(--font-pretendard)" }}>
     {children}
   </p>
 );
 
 export const Spec = () => (
-  <div style={{ padding: 32, maxWidth: 900, fontFamily: "Pretendard, sans-serif" }}>
+  <div style={{ padding: 32, maxWidth: 900, fontFamily: "var(--font-pretendard)" }}>
     <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Layout System</h1>
     <p style={{ fontSize: 14, color: "#666", marginBottom: 32 }}>
       b.spoke 디자인 시스템의 반응형 레이아웃 규칙입니다.
