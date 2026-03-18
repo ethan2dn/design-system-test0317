@@ -137,15 +137,14 @@ function App() {
     : { left: 16, top: 16 };
 
   return (
-    <div style={{ height: "100vh", overflow: "hidden", display: "flex", justifyContent: "center", background: constrainedWidth ? `var(--color-${theme}-bg-base)` : "transparent" }}>
+    <div style={{ height: "100vh", height: "100dvh", overflow: "hidden", display: "flex", justifyContent: "center", background: constrainedWidth ? `var(--color-${theme}-bg-base)` : "transparent" }}>
       {/* Page container */}
       <div
         ref={containerRef}
         style={{
           width: constrainedWidth ? constrainedWidth : "100%",
           maxWidth: "100%",
-          height: "100vh",
-          overflow: "auto",
+          height: "100%",
           transition: "width 0.2s ease",
         }}
       >

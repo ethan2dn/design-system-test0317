@@ -131,16 +131,15 @@ function PlaygroundUI() {
     : { left: 16, top: 16 };
 
   return (
-    <div style={{ position: "relative", minHeight: "100vh", display: "flex", justifyContent: "center", background: constrainedWidth ? "#e8e8ec" : "transparent" }}>
+    <div style={{ position: "relative", height: "100vh", overflow: "hidden", display: "flex", justifyContent: "center", background: constrainedWidth ? "#e8e8ec" : "transparent" }}>
       {/* Page container */}
       <div
         ref={containerRef}
         style={{
           width: constrainedWidth ? constrainedWidth : "100%",
           maxWidth: "100%",
-          minHeight: "100vh",
+          height: "100%",
           transition: "width 0.2s ease",
-          boxShadow: constrainedWidth ? "0 0 40px rgba(0,0,0,0.1)" : "none",
         }}
       >
         <ThankYouPage
