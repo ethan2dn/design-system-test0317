@@ -7,8 +7,11 @@ export default {
   component: ThankYouPage,
 };
 
-// Vite dev 서버 embed URL
-const EMBED_URL = "http://localhost:3000/design-system-test0317/?embed=true";
+// embed URL: 로컬이면 Vite dev 서버, 배포 환경이면 같은 origin의 빌드된 앱
+const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const EMBED_URL = isLocal
+  ? "http://localhost:3000/design-system-test0317/?embed=true"
+  : `${window.location.origin}/design-system-test0317/?embed=true`;
 
 const mono = "'SF Mono', 'Fira Code', monospace";
 
