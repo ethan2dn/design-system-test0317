@@ -445,9 +445,7 @@ function ActionButtons({ theme, singleButton = false, isDesktop = false, lang = 
   return (
     <div
       style={{
-        position: "sticky",
-        bottom: 0,
-        zIndex: 10,
+        flexShrink: 0,
         background: v(`${theme}/surface/display-bar-bottom`),
         borderTop: `1px solid ${v("always/black006-a")}`,
       }}
@@ -521,39 +519,42 @@ export default function ThankYouPage({
   const { device, isDesktop } = useBreakpoint();
 
   return (
-    <PageLayout theme={theme}>
-      {/* GNB — 모바일: view, PC: home */}
+    <PageLayout theme={theme} style={{ height: "100vh", height: "100dvh", overflow: "hidden" }}>
+      {/* GNB — 상단 고정 */}
       <NavigationBar
         type={isDesktop ? "home" : "view"}
         device={device}
         theme={theme}
         showBorder={false}
         rightIcons={GNB_RIGHT_ICONS}
+        style={{ flexShrink: 0 }}
       />
 
-      {/* Content — narrow (704px) max-width, 반응형 패딩 */}
-      <Section maxWidth="narrow" padded style={{ flex: 1 }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {/* Success header */}
-          <SuccessHeader theme={theme} lang={lang} />
+      {/* Content — 스크롤 영역 */}
+      <div style={{ flex: 1, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+        <Section maxWidth="narrow" padded>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {/* Success header */}
+            <SuccessHeader theme={theme} lang={lang} />
 
-          {/* Konbini notice (탑/카드와 형제 레벨) */}
-          {isKonbini && <KonbiniNotice theme={theme} hasPaymentLink={hasPaymentLink} lang={lang} />}
+            {/* Konbini notice (탑/카드와 형제 레벨) */}
+            {isKonbini && <KonbiniNotice theme={theme} hasPaymentLink={hasPaymentLink} lang={lang} />}
 
-          {/* Order card */}
-          <OrderCard
-            products={products}
-            theme={theme}
-            showPoints={showPoints}
-            thumbnailOverride={thumbOverride}
-          />
+            {/* Order card */}
+            <OrderCard
+              products={products}
+              theme={theme}
+              showPoints={showPoints}
+              thumbnailOverride={thumbOverride}
+            />
 
-          {/* Additional info */}
-          <AdditionalInfo theme={theme} />
-        </div>
-      </Section>
+            {/* Additional info */}
+            <AdditionalInfo theme={theme} />
+          </div>
+        </Section>
+      </div>
 
-      {/* Bottom action buttons (sticky) */}
+      {/* Bottom action buttons — 하단 고정 */}
       <ActionButtons theme={theme} singleButton={singleButton} isDesktop={isDesktop} lang={lang} />
     </PageLayout>
   );
