@@ -168,6 +168,7 @@ export default function Button({
 }) {
   const [hovered, setHovered] = useState(false);
   const [pressed, setPressed] = useState(false);
+  const isTouchRef = React.useRef(false);
 
   const sizeNum = typeof size === "string" ? parseInt(size, 10) : size;
   const config = SIZE_CONFIG[sizeNum] || SIZE_CONFIG[40];
@@ -225,10 +226,13 @@ export default function Button({
       style={buttonStyle}
       disabled={disabled}
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => { setHovered(false); setPressed(false); }}
-      onMouseDown={() => setPressed(true)}
-      onMouseUp={() => setPressed(false)}
+      onMouseEnter={() => { if (!isTouchRef.current) setHovered(true); }}
+      onMouseLeave={() => { setHovered(false); setPressed(false); isTouchRef.current = false; }}
+      onMouseDown={() => { if (!isTouchRef.current) setPressed(true); }}
+      onMouseUp={() => { if (!isTouchRef.current) setPressed(false); }}
+      onTouchStart={() => { isTouchRef.current = true; setPressed(true); }}
+      onTouchEnd={() => { setPressed(false); setHovered(false); }}
+      onTouchCancel={() => { setPressed(false); setHovered(false); }}
       {...props}
     >
       {/* Hover/Active overlay (matches Figma press&hover rectangle) */}

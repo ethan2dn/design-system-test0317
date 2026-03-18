@@ -261,6 +261,8 @@ function NavMenuItem({ label, active, theme }) {
     <span
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onTouchEnd={() => setHovered(false)}
+      onTouchCancel={() => setHovered(false)}
       style={{
         fontSize: 14,
         fontWeight: active ? 700 : 400,

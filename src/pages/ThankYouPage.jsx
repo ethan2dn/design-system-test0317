@@ -309,9 +309,17 @@ function OrderCard({ products, theme, showPoints = true, thumbnailOverride }) {
   const totalPrice = products.reduce((s, p) => s + p.price * p.qty, 0);
   const pointsEarned = Math.floor(totalPrice * 0.02);
   const thumbSrc = thumbnailOverride || products[0].thumbnail;
+  const [pressed, setPressed] = useState(false);
+  const isTouchRef = useRef(false);
 
   return (
     <div
+      onClick={() => {/* TODO: 주문 상세 페이지 이동 */}}
+      onMouseEnter={() => { if (!isTouchRef.current) setPressed(true); }}
+      onMouseLeave={() => { setPressed(false); isTouchRef.current = false; }}
+      onTouchStart={() => { isTouchRef.current = true; setPressed(true); }}
+      onTouchEnd={() => setPressed(false)}
+      onTouchCancel={() => setPressed(false)}
       style={{
         background: v(`${theme}/surface/card`),
         borderRadius: 12,
@@ -320,8 +328,23 @@ function OrderCard({ products, theme, showPoints = true, thumbnailOverride }) {
         display: "flex",
         flexDirection: "column",
         gap: 8,
+        cursor: "pointer",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      {/* Hover/Touch overlay */}
+      {pressed && (
+        <span
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: v("always/lightgrey006-a"),
+            borderRadius: "inherit",
+            pointerEvents: "none",
+          }}
+        />
+      )}
       {/* Header: "주문상품 N건" + angleSmallRight */}
       <div
         style={{
@@ -445,7 +468,11 @@ function ActionButtons({ theme, singleButton = false, isDesktop = false, lang = 
   return (
     <div
       style={{
-        flexShrink: 0,
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
         background: v(`${theme}/surface/display-bar-bottom`),
         borderTop: `1px solid ${v("always/black006-a")}`,
       }}
@@ -518,20 +545,25 @@ export default function ThankYouPage({
   const thumbOverride = thumbnailType === "default" ? defaultThumbnail : undefined;
   const { device, isDesktop } = useBreakpoint();
 
+  // GNB 높이: 모바일 48px, PC 72px
+  const gnbHeight = isDesktop ? 72 : 48;
+  // 하단 버튼 높이: 버튼 48 + 패딩 상16 + 패딩 하(모바일16/PC40) + 보더1
+  const actionHeight = 48 + 16 + (isDesktop ? 40 : 16) + 1;
+
   return (
-    <PageLayout theme={theme} style={{ height: "100vh", height: "100dvh", overflow: "hidden" }}>
-      {/* GNB — 상단 고정 */}
+    <PageLayout theme={theme}>
+      {/* GNB — fixed 상단 */}
       <NavigationBar
         type={isDesktop ? "home" : "view"}
         device={device}
         theme={theme}
         showBorder={false}
         rightIcons={GNB_RIGHT_ICONS}
-        style={{ flexShrink: 0 }}
+        style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100 }}
       />
 
-      {/* Content — 스크롤 영역 */}
-      <div style={{ flex: 1, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+      {/* Content — 자연스러운 스크롤, GNB/하단버튼 영역만큼 패딩 */}
+      <div style={{ paddingTop: gnbHeight, paddingBottom: actionHeight }}>
         <Section maxWidth="narrow" padded>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {/* Success header */}
@@ -554,7 +586,7 @@ export default function ThankYouPage({
         </Section>
       </div>
 
-      {/* Bottom action buttons — 하단 고정 */}
+      {/* Bottom action buttons — fixed 하단 */}
       <ActionButtons theme={theme} singleButton={singleButton} isDesktop={isDesktop} lang={lang} />
     </PageLayout>
   );
