@@ -707,3 +707,220 @@ function PlaygroundUI() {
   );
 }
 
+// ── Spec (명세서) ──
+
+const specMono = "'SF Mono', 'Fira Code', monospace";
+
+function SpecSection2({ title, children }) {
+  return (
+    <div style={{ marginBottom: 32 }}>
+      <h3 style={{ fontSize: 16, fontWeight: 700, color: "#151515", margin: "0 0 12px", paddingBottom: 8, borderBottom: "2px solid #151515" }}>
+        {title}
+      </h3>
+      {children}
+    </div>
+  );
+}
+
+function SpecTable2({ headers, rows }) {
+  return (
+    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, fontFamily: "Pretendard, sans-serif", marginBottom: 16 }}>
+      <thead>
+        <tr>
+          {headers.map((h, i) => (
+            <th key={i} style={{ textAlign: "left", padding: "8px 12px", background: "#f4f4f6", fontWeight: 600, fontSize: 12, color: "#454545", borderBottom: "1px solid #ddd", whiteSpace: "nowrap" }}>{h}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, ri) => (
+          <tr key={ri}>
+            {row.map((cell, ci) => (
+              <td key={ci} style={{ padding: "8px 12px", borderBottom: "1px solid #eee", color: "#333", verticalAlign: "top", lineHeight: 1.6 }}>{cell}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+function SC({ children }) {
+  return <code style={{ padding: "1px 6px", background: "#f0f0f3", borderRadius: 4, fontSize: 11, fontFamily: specMono, color: "#d63384" }}>{children}</code>;
+}
+
+function SpecNote2({ children }) {
+  return <div style={{ padding: "10px 14px", background: "#fffbe6", border: "1px solid #ffe58f", borderRadius: 8, fontSize: 12, color: "#665500", lineHeight: 1.7, marginBottom: 12 }}>{children}</div>;
+}
+
+function SpecUI() {
+  return (
+    <div style={{ fontFamily: "Pretendard, sans-serif", padding: 32, maxWidth: 960, margin: "0 auto" }}>
+      <h2 style={{ fontSize: 24, fontWeight: 700, margin: "0 0 4px" }}>Button — 컴포넌트 명세서</h2>
+      <p style={{ fontSize: 13, color: "#999", margin: "0 0 8px", fontFamily: specMono }}>Figma: Buttons component set &middot; 480 variants</p>
+      <p style={{ fontSize: 13, color: "#666", margin: "0 0 32px" }}>피그마 Buttons 컴포넌트셋 기반. CSS Custom Properties(디자인 토큰)로 모든 색상/타이포를 제어하며, light/dark 테마를 지원합니다.</p>
+
+      <SpecSection2 title="Props">
+        <SpecTable2
+          headers={["Prop", "타입", "기본값", "설명"]}
+          rows={[
+            [<SC>styleType</SC>, <SC>fill | outline | clear | text</SC>, <SC>fill</SC>, "버튼 스타일 유형"],
+            [<SC>contentType</SC>, <SC>text | icon</SC>, <SC>text</SC>, "콘텐츠 유형 (텍스트 or 아이콘 전용)"],
+            [<SC>size</SC>, <SC>18 | 20 | 24 | 28 | 32 | 36 | 40 | 48</SC>, <SC>40</SC>, "버튼 높이 (px)"],
+            [<SC>color</SC>, <SC>picker | mono | red</SC>, <SC>picker</SC>, "컬러 테마"],
+            [<SC>strength</SC>, <SC>0 | -1</SC>, <SC>0</SC>, "0: 강함(strong), -1: 약함(weak)"],
+            [<SC>disabled</SC>, <SC>boolean</SC>, <SC>false</SC>, "비활성화 여부 (opacity 0.4)"],
+            [<SC>label</SC>, <SC>string</SC>, <SC>"Label"</SC>, "버튼 텍스트 (contentType=text)"],
+            [<SC>prefixIcon</SC>, <SC>string</SC>, "—", "텍스트 앞 아이콘 이름"],
+            [<SC>suffixIcon</SC>, <SC>string</SC>, "—", "텍스트 뒤 아이콘 이름"],
+            [<SC>iconName</SC>, <SC>string</SC>, <SC>"default_plus_line"</SC>, "아이콘 전용 모드에서 사용할 아이콘"],
+            [<SC>iconSize</SC>, <SC>number</SC>, "—", "아이콘 크기 오버라이드 (미지정 시 size별 기본값)"],
+            [<SC>fullWidth</SC>, <SC>boolean</SC>, <SC>false</SC>, "width: 100%"],
+            [<SC>theme</SC>, <SC>light | dark</SC>, <SC>light</SC>, "라이트/다크 테마"],
+            [<SC>onClick</SC>, <SC>function</SC>, "—", "클릭 핸들러"],
+          ]}
+        />
+      </SpecSection2>
+
+      <SpecSection2 title="Variant 조합">
+        <SpecNote2>총 variant 수: styleType(4) × contentType(2) × size(8) × color(3) × strength(2) × disabled(2) = 768 조합. 피그마 기준 480개 variant (일부 조합 제외).</SpecNote2>
+        <h4 style={{ fontSize: 13, fontWeight: 600, margin: "16px 0 8px" }}>styleType</h4>
+        <SpecTable2
+          headers={["styleType", "배경", "보더", "용도"]}
+          rows={[
+            [<SC>fill</SC>, "컬러 배경", "없음", "Primary CTA, 강조 액션"],
+            [<SC>outline</SC>, "투명", "1px solid 컬러", "Secondary 액션, 취소"],
+            [<SC>clear</SC>, "투명", "없음", "Tertiary 액션, 인라인 버튼"],
+            [<SC>text</SC>, "투명", "없음", "텍스트 링크 스타일 버튼"],
+          ]}
+        />
+        <h4 style={{ fontSize: 13, fontWeight: 600, margin: "16px 0 8px" }}>color × strength (fill 기준)</h4>
+        <SpecTable2
+          headers={["color", "strength=0 (strong)", "strength=-1 (weak)"]}
+          rows={[
+            [<SC>picker</SC>, <>배경 <SC>picker/button</SC>, 텍스트 <SC>picker/on-button</SC></>, <>배경 <SC>picker/button-weak-a</SC>, 텍스트 <SC>picker/button</SC></>],
+            [<SC>mono</SC>, <>배경 <SC>{`{theme}/surface/form-inverted`}</SC>, 텍스트 <SC>{`{theme}/text/invert-a`}</SC></>, <>배경 <SC>always/lightgrey015-a</SC>, 텍스트 <SC>{`{theme}/text/primary`}</SC></>],
+            [<SC>red</SC>, <>배경 <SC>{`{theme}/surface/form-red`}</SC>, 텍스트 <SC>always/white100</SC></>, <>배경 <SC>{`{theme}/surface/form-red-weak-a`}</SC>, 텍스트 <SC>{`{theme}/text/red`}</SC></>],
+          ]}
+        />
+        <SpecNote2>outline/clear/text는 배경 투명, 텍스트/아이콘 컬러만 적용. outline의 보더: strong은 진한 보더, weak(-1)은 연한 보더. mono + weak 조합은 다크 배경에서 사용하도록 설계됨.</SpecNote2>
+      </SpecSection2>
+
+      <SpecSection2 title="사이즈 스펙">
+        <SpecTable2
+          headers={["size", "height", "fontSize", "iconSize", "padding (H×V)", "gap", "radius"]}
+          rows={[
+            ["18", "18px", "11px", "12px", "4×1", "0", "4px"],
+            ["20", "20px", "11px", "14px", "4×1", "0", "4px"],
+            ["24", "24px", "12px", "16px", "6×2", "0", "6px"],
+            ["28", "28px", "13px", "16px", "8×3", "1px", "6px"],
+            ["32", "32px", "13px", "16px", "8×3", "1px", "6px"],
+            ["36", "36px", "14px", "20px", "10×4", "2px", "6px"],
+            ["40", "40px", "14px", "20px", "10×4", "2px", "6px"],
+            ["48", "48px", "16px", "24px", "12×6", "2px", "6px"],
+          ]}
+        />
+        <SpecNote2><SC>contentType=icon</SC>일 때: padding은 py만 적용 (정사각형에 가까운 형태), minWidth = height.</SpecNote2>
+      </SpecSection2>
+
+      <SpecSection2 title="타이포그래피 토큰 매핑">
+        <SpecTable2
+          headers={["fontSize (px)", "토큰", "fontWeight", "적용 size"]}
+          rows={[
+            ["11", <SC>11-caption-med</SC>, "500 (medium)", "18, 20"],
+            ["12", <SC>12-caption-med</SC>, "500 (medium)", "24"],
+            ["13", <SC>13-body-med</SC>, "500 (medium)", "28, 32"],
+            ["14", <SC>14-body-med</SC>, "500 (medium)", "36, 40"],
+            ["16", <SC>16-title-med</SC>, "500 (medium)", "48"],
+          ]}
+        />
+      </SpecSection2>
+
+      <SpecSection2 title="상태 (States)">
+        <SpecTable2
+          headers={["상태", "처리 방식", "토큰"]}
+          rows={[
+            ["Default", "기본 스타일 적용", "—"],
+            ["Hover", "오버레이 (absolute, inset:0)", <SC>{`{theme}/overlay/hover-grey-a`}</SC>],
+            ["Active / Press", "오버레이 (absolute, inset:0)", <SC>{`{theme}/overlay/press-grey-a`}</SC>],
+            ["Disabled", "opacity: 0.4, cursor: not-allowed", "—"],
+          ]}
+        />
+        <SpecNote2>오버레이는 <SC>position: absolute; inset: 0; pointerEvents: none</SC>으로 버튼 내부에 렌더. 터치 디바이스: touchStart→press, touchEnd→release. 터치 후 마우스 이벤트 무시 (ghost click 방지).</SpecNote2>
+      </SpecSection2>
+
+      <SpecSection2 title="Outline 보더 토큰 상세">
+        <SpecTable2
+          headers={["color", "strength=0", "strength=-1"]}
+          rows={[
+            [<SC>picker</SC>, <SC>picker/button</SC>, <SC>picker/button-weak-a</SC>],
+            [<SC>mono</SC>, <SC>{`{theme}/border/stronger`}</SC>, <SC>{`{theme}/border/default-a`}</SC>],
+            [<SC>red</SC>, <SC>{`{theme}/border/red`}</SC>, <SC>{`{theme}/border/red-weak-a`}</SC>],
+          ]}
+        />
+      </SpecSection2>
+
+      <SpecSection2 title="아이콘">
+        <SpecTable2
+          headers={["항목", "값"]}
+          rows={[
+            ["Icon 컴포넌트", <SC>{`<Icon name={...} size={iconSize} color={iconColor} />`}</SC>],
+            ["아이콘 크기", "size별 기본값 (12~24px), iconSize prop으로 오버라이드 가능"],
+            ["아이콘 색상", "버튼 텍스트 색상과 동일 토큰 사용"],
+          ]}
+        />
+        <h4 style={{ fontSize: 13, fontWeight: 600, margin: "16px 0 8px" }}>contentType별 구조</h4>
+        <SpecTable2
+          headers={["contentType", "구조"]}
+          rows={[
+            [<SC>text</SC>, "[prefixIcon] + label(텍스트) + [suffixIcon] — gap으로 간격"],
+            [<SC>icon</SC>, "iconName 단독 렌더 — 정사각형 패딩, minWidth=height"],
+          ]}
+        />
+      </SpecSection2>
+
+      <SpecSection2 title="사용 예시">
+        <pre style={{ fontFamily: specMono, fontSize: 12, background: "#f4f4f6", padding: 16, borderRadius: 8, color: "#333", lineHeight: 1.8, overflow: "auto" }}>
+{`// Primary CTA
+<Button styleType="fill" color="picker" size={48} label="구매하기" fullWidth />
+
+// Secondary (outline)
+<Button styleType="outline" color="mono" size={48} label="홈으로 가기" fullWidth />
+
+// Icon + Text
+<Button label="검색" prefixIcon="gnb_search_line" size={36} />
+
+// Icon only
+<Button contentType="icon" iconName="default_plus_line" size={40} />
+
+// Weak (약한 강조)
+<Button styleType="fill" color="picker" strength={-1} size={32} label="태그" />
+
+// Red (위험/삭제)
+<Button styleType="fill" color="red" size={40} label="삭제" />
+
+// Dark theme
+<Button theme="dark" styleType="fill" color="mono" size={40} label="다크 버튼" />`}
+        </pre>
+      </SpecSection2>
+
+      <SpecSection2 title="Figma 참고">
+        <SpecTable2
+          headers={["항목", "값"]}
+          rows={[
+            ["디자인 파일", <>b.spoke User (<SC>OCTjdP5XAKan0Sr31pQlKV</SC>)</>],
+            ["컴포넌트셋", "Buttons (480 variants)"],
+            ["토큰 파일", <SC>figma-tokens.json</SC>],
+            ["CSS 변수", <SC>src/tokens.css</SC>],
+          ]}
+        />
+      </SpecSection2>
+    </div>
+  );
+}
+
+export const Spec = {
+  render: () => <SpecUI />,
+};
+
+Spec.storyName = "Spec (명세서)";
