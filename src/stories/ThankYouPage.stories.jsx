@@ -7,6 +7,9 @@ export default {
   component: ThankYouPage,
 };
 
+// Vite dev 서버 embed URL
+const EMBED_URL = "http://localhost:3000/design-system-test0317/?embed=true";
+
 const mono = "'SF Mono', 'Fira Code', monospace";
 
 // ── Shared Controls ──
@@ -66,6 +69,58 @@ const WIDTH_PRESETS = [
   { label: "Full", value: null },
 ];
 
+// ── iframe: 실제 Vite dev 서버 페이지 로드 + postMessage 통신 ──
+
+function PageFrame({ width, props }) {
+  const iframeRef = useRef(null);
+  const readyRef = useRef(false);
+  const pendingRef = useRef(null);
+
+  // iframe 준비 완료 시 대기 중인 props 전송
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.data?.type === "thankyou-ready") {
+        readyRef.current = true;
+        if (pendingRef.current) {
+          iframeRef.current?.contentWindow?.postMessage(
+            { type: "thankyou-props", props: pendingRef.current },
+            "*"
+          );
+          pendingRef.current = null;
+        }
+      }
+    };
+    window.addEventListener("message", handler);
+    return () => window.removeEventListener("message", handler);
+  }, []);
+
+  // props 변경 시 iframe에 전송
+  useEffect(() => {
+    if (readyRef.current) {
+      iframeRef.current?.contentWindow?.postMessage(
+        { type: "thankyou-props", props },
+        "*"
+      );
+    } else {
+      pendingRef.current = props;
+    }
+  }, [props]);
+
+  return (
+    <iframe
+      ref={iframeRef}
+      src={EMBED_URL}
+      style={{
+        width: width || "100%",
+        height: "100%",
+        border: "none",
+        display: "block",
+        transition: "width 0.2s ease",
+      }}
+    />
+  );
+}
+
 // ── Story ──
 
 function PlaygroundUI() {
@@ -77,31 +132,19 @@ function PlaygroundUI() {
   const [productCount, setProductCount] = useState(1);
   const [showPoints, setShowPoints] = useState(true);
   const [thumbnailType, setThumbnailType] = useState("sample");
-  const [panelOpen, setPanelOpen] = useState(true);
   const [constrainedWidth, setConstrainedWidth] = useState(null);
   const [customWidth, setCustomWidth] = useState("");
+  const [panelOpen, setPanelOpen] = useState(true);
   const [dragging, setDragging] = useState(false);
   const [panelPos, setPanelPos] = useState({ x: null, y: null });
   const dragRef = useRef(null);
   const dragStartRef = useRef(null);
 
-  const [containerWidth, setContainerWidth] = useState(800);
-  const containerRef = useRef(null);
+  const iframeWidth = constrainedWidth || "100%";
+  const displayWidth = constrainedWidth || "Full";
+  const breakpoint = constrainedWidth ? (constrainedWidth >= 801 ? "PC" : "Mobile") : "—";
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const ro = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setContainerWidth(Math.round(entry.contentRect.width));
-      }
-    });
-    ro.observe(containerRef.current);
-    return () => ro.disconnect();
-  }, []);
-
-  const breakpoint = containerWidth >= 801 ? "PC" : "Mobile";
-
-  // 드래그
+  // 패널 드래그
   const onDragStart = (e) => {
     setDragging(true);
     const rect = dragRef.current.getBoundingClientRect();
@@ -131,30 +174,33 @@ function PlaygroundUI() {
     : { left: 16, top: 16 };
 
   return (
-    <div style={{ position: "relative", height: "100vh", overflow: "hidden", display: "flex", justifyContent: "center", background: constrainedWidth ? "#e8e8ec" : "transparent" }}>
-      {/* Page container */}
+    <div style={{ position: "relative", height: "100vh", overflow: "hidden", fontFamily: "Pretendard, sans-serif" }}>
+      {/* Page preview — iframe 기반 */}
       <div
-        ref={containerRef}
         style={{
-          width: constrainedWidth ? constrainedWidth : "100%",
-          maxWidth: "100%",
+          width: "100%",
           height: "100%",
-          transition: "width 0.2s ease",
+          display: "flex",
+          justifyContent: "center",
+          background: constrainedWidth ? "#e8e8ec" : "transparent",
         }}
       >
-        <ThankYouPage
-          theme={theme}
-          lang={lang}
-          isKonbini={isKonbini}
-          hasPaymentLink={hasPaymentLink}
-          singleButton={singleButton}
-          productCount={productCount}
-          showPoints={showPoints}
-          thumbnailType={thumbnailType}
+        <PageFrame
+          width={iframeWidth}
+          props={{
+            theme,
+            lang,
+            isKonbini,
+            hasPaymentLink,
+            singleButton,
+            productCount,
+            showPoints,
+            thumbnailType,
+          }}
         />
       </div>
 
-      {/* Debug Panel — floating, bottom-right */}
+      {/* Debug Panel — floating */}
       <div
         ref={dragRef}
         style={{
@@ -188,19 +234,23 @@ function PlaygroundUI() {
             <span style={{ fontSize: 10, color: "#999", fontFamily: mono }}>[P1] 땡큐</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 10, color: "#999", fontFamily: mono }}>{containerWidth}px</span>
-            <span
-              style={{
-                padding: "1px 6px",
-                borderRadius: 3,
-                fontSize: 9,
-                fontWeight: 600,
-                background: breakpoint === "PC" ? "#654BFF" : "#151515",
-                color: "#fff",
-              }}
-            >
-              {breakpoint}
+            <span style={{ fontSize: 10, color: "#999", fontFamily: mono }}>
+              {typeof displayWidth === "number" ? `${displayWidth}px` : displayWidth}
             </span>
+            {constrainedWidth && (
+              <span
+                style={{
+                  padding: "1px 6px",
+                  borderRadius: 3,
+                  fontSize: 9,
+                  fontWeight: 600,
+                  background: breakpoint === "PC" ? "#654BFF" : "#151515",
+                  color: "#fff",
+                }}
+              >
+                {breakpoint}
+              </span>
+            )}
             <button
               onClick={() => setPanelOpen(!panelOpen)}
               style={{
@@ -239,12 +289,12 @@ function PlaygroundUI() {
             <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", margin: "8px 0" }} />
 
             <ControlRow label="Konbini">
-              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", color: "#666" }}>
                 <input type="checkbox" checked={isKonbini} onChange={(e) => setIsKonbini(e.target.checked)} style={{ accentColor: "#151515" }} />
                 콘비니 결제
               </label>
               {isKonbini && (
-                <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666", marginLeft: 8 }}>
+                <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", color: "#666", marginLeft: 8 }}>
                   <input type="checkbox" checked={hasPaymentLink} onChange={(e) => setHasPaymentLink(e.target.checked)} style={{ accentColor: "#151515" }} />
                   결제 링크
                 </label>
@@ -255,30 +305,15 @@ function PlaygroundUI() {
 
             <ControlRow label="Products">
               {[1, 2, 3, 5].map((n) => (
-                <Chip
-                  key={n}
-                  label={`${n}건`}
-                  active={productCount === n}
-                  onClick={() => setProductCount(n)}
-                />
+                <Chip key={n} label={`${n}건`} active={productCount === n} onClick={() => setProductCount(n)} />
               ))}
               <input
                 type="number"
                 min={1}
                 max={20}
                 value={productCount}
-                onChange={(e) =>
-                  setProductCount(Math.max(1, Math.min(20, Number(e.target.value) || 1)))
-                }
-                style={{
-                  width: 40,
-                  padding: "2px 4px",
-                  borderRadius: 4,
-                  border: "1px solid rgba(0,0,0,0.1)",
-                  fontSize: 11,
-                  fontFamily: mono,
-                  textAlign: "center",
-                }}
+                onChange={(e) => setProductCount(Math.max(1, Math.min(20, Number(e.target.value) || 1)))}
+                style={{ width: 40, padding: "2px 4px", borderRadius: 4, border: "1px solid rgba(0,0,0,0.1)", fontSize: 11, fontFamily: mono, textAlign: "center" }}
               />
             </ControlRow>
 
@@ -288,7 +323,7 @@ function PlaygroundUI() {
             </ControlRow>
 
             <ControlRow label="Points">
-              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", color: "#666" }}>
                 <input type="checkbox" checked={showPoints} onChange={(e) => setShowPoints(e.target.checked)} style={{ accentColor: "#151515" }} />
                 적립예정 표시
               </label>
@@ -297,7 +332,7 @@ function PlaygroundUI() {
             <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", margin: "8px 0" }} />
 
             <ControlRow label="Buttons">
-              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", fontFamily: "Pretendard, sans-serif", color: "#666" }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, cursor: "pointer", color: "#666" }}>
                 <input type="checkbox" checked={singleButton} onChange={(e) => setSingleButton(e.target.checked)} style={{ accentColor: "#151515" }} />
                 1개 버튼 (홈으로 가기만)
               </label>
@@ -333,15 +368,7 @@ function PlaygroundUI() {
                     const v = Number(e.target.value);
                     if (v >= 280 && v <= 2560) setConstrainedWidth(v);
                   }}
-                  style={{
-                    width: 52,
-                    padding: "2px 4px",
-                    borderRadius: 4,
-                    border: "1px solid rgba(0,0,0,0.1)",
-                    fontSize: 11,
-                    fontFamily: mono,
-                    textAlign: "center",
-                  }}
+                  style={{ width: 52, padding: "2px 4px", borderRadius: 4, border: "1px solid rgba(0,0,0,0.1)", fontSize: 11, fontFamily: mono, textAlign: "center" }}
                 />
               </div>
             </div>
@@ -354,6 +381,9 @@ function PlaygroundUI() {
 
 export const Playground = {
   render: () => <PlaygroundUI />,
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 Playground.storyName = "Playground";
@@ -517,7 +547,7 @@ function SpecUI() {
             ["Konbini", "KonbiniNotice", "콘비니 결제 시에만 노출. 결제 기한 + 안내 텍스트"],
             ["주문상품", "OrderCard", "상품 썸네일 + 상품명 + 가격(+ 적립 포인트). N건이면 배지 표시"],
             ["약관", "AdditionalInfo", "청약철회 불가 안내 등 불릿 리스트"],
-            ["하단 버튼", "ActionButtons", "sticky bottom. 1개 또는 2개 버튼 시나리오"],
+            ["하단 버튼", "ActionButtons", "fixed bottom. 1개 또는 2개 버튼 시나리오"],
           ]}
         />
       </SpecSection>
@@ -677,7 +707,7 @@ function SpecUI() {
         <SpecTable
           headers={["항목", "값"]}
           rows={[
-            ["position", "sticky bottom"],
+            ["position", "fixed bottom"],
             ["배경", <SpecCode>{`{theme}/surface/display-bar-bottom`}</SpecCode>],
             ["상단 border", <><SpecCode>always/black006-a</SpecCode> (1px)</>],
             ["수평 패딩", "section-padded (모바일 16px / PC 32px)"],
@@ -691,12 +721,12 @@ function SpecUI() {
         <SpecTable
           headers={["시나리오", "버튼 구성", "조건"]}
           rows={[
-            ["2개 버튼", <>좌: <SpecCode>outline/mono/48</SpecCode> \"홈으로 가기\" + 우: <SpecCode>fill/picker/48</SpecCode> \"돌아가기\"</>, "체크아웃 진입이 b.stage 콘텐츠 또는 상품에서 온 경우"],
-            ["1개 버튼", <><SpecCode>fill/picker/48</SpecCode> \"홈으로 가기\" (full width)</>, "직접 체크아웃 진입 (돌아갈 콘텐츠/상품 없음)"],
+            ["2개 버튼", <>좌: <SpecCode>outline/mono/48</SpecCode> "홈으로 가기" + 우: <SpecCode>fill/picker/48</SpecCode> "돌아가기"</>, "체크아웃 진입이 b.stage 콘텐츠 또는 상품에서 온 경우"],
+            ["1개 버튼", <><SpecCode>fill/picker/48</SpecCode> "홈으로 가기" (full width)</>, "직접 체크아웃 진입 (돌아갈 콘텐츠/상품 없음)"],
           ]}
         />
         <SpecNote>
-          \"돌아가기\" 버튼 동작: 콘텐츠 진입 → 해당 콘텐츠로 이동, 상품 진입 → 상품 상세로 이동.
+          "돌아가기" 버튼 동작: 콘텐츠 진입 → 해당 콘텐츠로 이동, 상품 진입 → 상품 상세로 이동.
           버튼 시나리오는 Konbini 여부와 무관하게 독립적으로 설정.
         </SpecNote>
       </SpecSection>
@@ -713,7 +743,7 @@ function SpecUI() {
             ["Thumbnail", "Chip (Sample / Default)", "Sample", "상품 썸네일 이미지 타입"],
             ["Points", "Checkbox", "ON", "적립예정 포인트 표시 여부"],
             ["Buttons", "Checkbox", "OFF", "1개 버튼 (홈으로 가기만) 모드"],
-            ["Viewport Width", "Chip (360~Full) + 직접 입력", "Full", "반응형 테스트용 뷰포트 너비"],
+            ["Viewport", "Chip (360~Full) + 직접 입력", "Full", "iframe 기반 반응형 뷰포트 시뮬레이션"],
           ]}
         />
       </SpecSection>

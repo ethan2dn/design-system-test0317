@@ -7,6 +7,10 @@ import { LANGUAGES } from "./i18n";
 
 const mono = "'SF Mono', 'Fira Code', monospace";
 
+// embed 모드 감지 (스토리북 iframe에서 로드 시)
+const params = new URLSearchParams(window.location.search);
+const isEmbed = params.get("embed") === "true";
+
 function Chip({ label, active, onClick }) {
   return (
     <button
@@ -52,15 +56,36 @@ function ControlRow({ label, children }) {
   );
 }
 
-const WIDTH_PRESETS = [
-  { label: "360", value: 360 },
-  { label: "375", value: 375 },
-  { label: "402", value: 402 },
-  { label: "800", value: 800 },
-  { label: "801", value: 801 },
-  { label: "1080", value: 1080 },
-  { label: "Full", value: null },
-];
+// ── Embed 모드: postMessage로 props 수신 ──
+
+function EmbedApp() {
+  const [props, setProps] = useState({
+    theme: "light",
+    lang: "ko",
+    isKonbini: false,
+    hasPaymentLink: false,
+    singleButton: false,
+    productCount: 1,
+    showPoints: true,
+    thumbnailType: "sample",
+  });
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.data?.type === "thankyou-props") {
+        setProps((prev) => ({ ...prev, ...e.data.props }));
+      }
+    };
+    window.addEventListener("message", handler);
+    // 부모에게 준비 완료 알림
+    window.parent.postMessage({ type: "thankyou-ready" }, "*");
+    return () => window.removeEventListener("message", handler);
+  }, []);
+
+  return <ThankYouPage {...props} />;
+}
+
+// ── 일반 모드: 디버그 패널 포함 ──
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -71,38 +96,22 @@ function App() {
   const [productCount, setProductCount] = useState(1);
   const [showPoints, setShowPoints] = useState(true);
   const [thumbnailType, setThumbnailType] = useState("sample");
-  const [panelOpen, setPanelOpen] = useState(true);
-  const [constrainedWidth, setConstrainedWidth] = useState(null); // null = full
-  const [customWidth, setCustomWidth] = useState("");
+  const [panelOpen, setPanelOpen] = useState(window.innerWidth >= 801);
   const [dragging, setDragging] = useState(false);
   const [panelPos, setPanelPos] = useState({ x: null, y: null });
   const dragRef = useRef(null);
   const dragStartRef = useRef(null);
 
-  // 현재 iframe/컨테이너 너비 표시용
-  const [containerWidth, setContainerWidth] = useState(window.innerWidth);
-  const containerRef = useRef(null);
+  // 현재 윈도우 너비 표시용
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    const ro = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setContainerWidth(Math.round(entry.contentRect.width));
-      }
-    });
-    ro.observe(containerRef.current);
-    return () => ro.disconnect();
-  }, []);
-
-  // 브라우저 resize 시에도 표시 갱신 (full 모드)
-  useEffect(() => {
-    if (constrainedWidth !== null) return;
-    const handler = () => setContainerWidth(window.innerWidth);
+    const handler = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
-  }, [constrainedWidth]);
+  }, []);
 
-  const breakpoint = containerWidth >= 801 ? "PC" : "Mobile";
+  const breakpoint = windowWidth >= 801 ? "PC" : "Mobile";
 
   // 패널 드래그
   const onDragStart = (e) => {
@@ -131,36 +140,26 @@ function App() {
     };
   }, [dragging]);
 
-  // 패널 위치 (기본: 우하단)
+  // 패널 위치 (기본: 좌상단)
   const panelStyle = panelPos.x !== null
     ? { left: panelPos.x, top: panelPos.y, right: "auto", bottom: "auto" }
     : { left: 16, top: 16 };
 
   return (
-    <div style={{ height: "100vh", height: "100dvh", overflow: "hidden", display: "flex", justifyContent: "center", background: constrainedWidth ? `var(--color-${theme}-bg-base)` : "transparent" }}>
-      {/* Page container */}
-      <div
-        ref={containerRef}
-        style={{
-          width: constrainedWidth ? constrainedWidth : "100%",
-          maxWidth: "100%",
-          height: "100%",
-          transition: "width 0.2s ease",
-        }}
-      >
-        <ThankYouPage
-          theme={theme}
-          lang={lang}
-          isKonbini={isKonbini}
-          hasPaymentLink={hasPaymentLink}
-          singleButton={singleButton}
-          productCount={productCount}
-          showPoints={showPoints}
-          thumbnailType={thumbnailType}
-        />
-      </div>
+    <div style={{ height: "100vh", height: "100dvh", overflow: "hidden" }}>
+      {/* Page — 전체 화면 */}
+      <ThankYouPage
+        theme={theme}
+        lang={lang}
+        isKonbini={isKonbini}
+        hasPaymentLink={hasPaymentLink}
+        singleButton={singleButton}
+        productCount={productCount}
+        showPoints={showPoints}
+        thumbnailType={thumbnailType}
+      />
 
-      {/* Debug Panel — floating, bottom-right */}
+      {/* Debug Panel — floating */}
       <div
         ref={dragRef}
         style={{
@@ -200,7 +199,7 @@ function App() {
 
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontSize: 10, color: "#999", fontFamily: mono }}>
-              {containerWidth}px
+              {windowWidth}px
             </span>
             <span
               style={{
@@ -315,49 +314,6 @@ function App() {
                 1개 버튼 (홈으로 가기만)
               </label>
             </ControlRow>
-
-            <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", margin: "8px 0" }} />
-
-            {/* Viewport width */}
-            <div>
-              <div style={{ fontSize: 10, fontWeight: 600, color: "#999", fontFamily: mono, marginBottom: 6 }}>
-                Viewport Width
-              </div>
-              <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
-                {WIDTH_PRESETS.map((p) => (
-                  <Chip
-                    key={p.label}
-                    label={p.label}
-                    active={constrainedWidth === p.value}
-                    onClick={() => {
-                      setConstrainedWidth(p.value);
-                      if (p.value !== null) setCustomWidth(String(p.value));
-                    }}
-                  />
-                ))}
-                <input
-                  type="number"
-                  min={280}
-                  max={2560}
-                  placeholder="px"
-                  value={customWidth}
-                  onChange={(e) => {
-                    setCustomWidth(e.target.value);
-                    const v = Number(e.target.value);
-                    if (v >= 280 && v <= 2560) setConstrainedWidth(v);
-                  }}
-                  style={{
-                    width: 52,
-                    padding: "2px 4px",
-                    borderRadius: 4,
-                    border: "1px solid rgba(0,0,0,0.1)",
-                    fontSize: 11,
-                    fontFamily: mono,
-                    textAlign: "center",
-                  }}
-                />
-              </div>
-            </div>
           </div>
         )}
       </div>
@@ -365,4 +321,7 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+// embed 모드면 디버그 패널 없이, 일반이면 디버그 패널 포함
+createRoot(document.getElementById("root")).render(
+  isEmbed ? <EmbedApp /> : <App />
+);
