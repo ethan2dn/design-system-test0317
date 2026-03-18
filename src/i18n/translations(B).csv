@@ -1,0 +1,267 @@
+ID,ko,en,ja,zh-TW,zh-CN,es,vi,비고,미사용
+B00001,적용하기,Apply,適用する,適用,适用,Aplicar,Áp dụng,,사용
+B00002,삭제하기,Delete,削除する ,刪除,删除,Borrar,Xóa,,사용
+B00003,등록하기,Post,登録する,登記,登记,Publica,Đăng ký,,사용
+B00004,저장하기,Save,保存する,保存,保存,Guardar,Lưu,,사용
+B00005,교환 #{{str}},Exchange #{{str}},交換 #{{str}},換貨 #{{str}},换货 #{{str}},Intercambiar #{{str}},Đổi #{{str}},주문/클레임 상세 > 상세보기 버튼,미사용
+B00006,반품 #{{str}},Return #{{str}},返品 #{{str}},退貨 #{{str}},退货 #{{str}},Devolver #{str}},Trả hàng #{{str}},주문/클레임 상세 > 상세보기 버튼,미사용
+B00007,출고준비,Preparing to Release,出荷準備,準備出庫,准备出库,Preparando liberación,Chuẩn bị xuất kho,주문/클레임 상세 > 처리 버튼,사용
+B00008,배송완료,Mark as delivered,配送完了,配送完成,配送完成,Marcar como entregado,Đã giao hàng,주문/클레임 상세 > 처리 버튼,사용
+B00009,구매확정,Purchase Confirmed,購入確定,確認購買,确认购买,Compra confirmada,Xác nhận mua hàng,주문/클레임 상세 > 처리 버튼,사용
+B00010,취소,Cancel,キャンセル,取消,取消,Cancelar,Hủy,주문/클레임 상세 > 처리 버튼,사용
+B00011,교환,Exchange,交換,換貨,换货,Cambiar,Đổi hàng,주문/클레임 상세 > 처리 버튼,사용
+B00012,반품,Return,返品,退貨,退货,Devolver,Trả hàng,주문/클레임 상세 > 처리 버튼,사용
+B00013,기타,Others,その他,其他,其他,Otros,Khác,주문/클레임 상세 > 처리 버튼,미사용
+B00014,최초주문내역,Initial Order History,最初の注文履歴,最早訂單明細,最早订单明细,Historial del pedido inicial,Lịch sử đặt hàng ban đầu,주문/클레임 상세 > 처리 버튼,미사용
+B00015,취소 #{{str}},Cancel #{{str}},キャンセル #{{str}},取消 #{{str}},取消 #{{str}},Cancelar #{{str}},Hủy #{{str}},주문/클레임 상세 > 상세보기 버튼,미사용
+B00016,배송 #{{str}},Shipment #{{str}},配送 #{{str}},配送 #{{str}},配送 #{{str}},Envío #{str},Vận chuyển #{{str}},주문/클레임 상세 > 상세보기 버튼,사용
+B00017,취소요청,Request Cancellation,キャンセル要請,請求取消,请求取消,Solicitar cancelación,Yêu cầu hủy,주문/클레임 상세 > 처리 버튼,사용
+B00018,배송조회,Track Shipping,配送状況,配送查詢,配送查询,Rastrear el envío,Tra cứu vận chuyển,주문/클레임 상세 > 처리 버튼,사용
+B00019,승인,Approve,承認,同意,同意,Aprobar,Phê duyệt,주문/클레임 상세 > 처리 버튼,사용
+B00020,거절,Deny,拒否,拒絕,拒绝,Denegar,Từ chối,주문/클레임 상세 > 처리 버튼,사용
+B00021,회수 송장 등록/수정,Register/edit collection label,回収の送り状登録/修正,上傳/修改回收清單,上传/修改回收清单,Registrar/editar etiqueta de recolección,Đăng ký/sửa hóa đơn thu hồi,주문/클레임 상세 > 처리 버튼,사용
+B00022,배송 송장 등록/수정,Register/edit shipping label,配送の送り状登録/修正,上傳/修改配送清單,上传/修改配送清单,Registrar/editar etiqueta de envío,Đăng ký/sửa hóa đơn vận chuyển,주문/클레임 상세 > 처리 버튼,사용
+B00023,회수지 수정,Edit collection address,回収先修正,修改回收地址,修改回收地址,Editar dirección de recolección,Sửa địa chỉ thu hồi,주문/클레임 상세 > 처리 버튼,사용
+B00024,교환배송지 수정,Edit exchange shipping address,交換配送先修正,修改換貨配送地址,修改换货配送地址,Editar dirección de envío del intercambio,Sửa địa chỉ giao đổi hàng,주문/클레임 상세 > 처리 버튼,사용
+B00025,반품으로 변경,Change to return,返品に変更,更改為退貨,更改为退货,Cambiar a devolución,Chuyển sang trả hàng,주문/클레임 상세 > 처리 버튼,사용
+B00026,교환으로 변경,Change to exchange,交換に変更,更改為換貨,更改为换货,Cambiar a intercambio,Chuyển sang đổi hàng,주문/클레임 상세 > 처리 버튼,사용
+B00027,회수완료 처리,Mark as collected,回収完了処理,回收完成,回收完成,Marcar como recolectado,Đã xử lý thu hồi thành công,주문/클레임 상세 > 처리 버튼,사용
+B00028,회수 재요청,Re-request collection,回収再要請,重新請求回收,重新请求回收,Volver a solicitar recolección,Yêu cầu thu hồi lại,주문/클레임 상세 > 처리 버튼,사용
+B00029,출고 재요청,Re-request release,出荷再要請,重新請求出庫,重新请求出库,Volver a solicitar salida,Yêu cầu xuất kho lại,주문/클레임 상세 > 처리 버튼,사용
+B00030,담당자 할당,Assign person-in-charge,担当者割り当て,分配負責人,分配负责人,Designar persona a cargo,Phân công người phụ trách,주문/클레임 상세 > 처리 버튼,사용
+B00031,상세 조회,Detailed inquiry,詳細照会,查詢詳情,查询详情,Consulta detallada,Xem chi tiết,주문/클레임 상세 > 처리 버튼,미사용
+B00032,환불처리,Refund,返金処理,退款處理,退款处理,Reembolso,Xử lý hoàn tiền,주문/클레임 상세 > 처리 버튼,사용
+B00033,주문 #{{str}},Order #{{str}},注文 #{{str}},訂單 #{{str}},订单 #{{str}},Pedido #{{str}},Đơn hàng #{{str}},주문/클레임 상세 > 처리 버튼,사용
+B00034,변경,Edit,変更,更改,更改,Cambiar,Thay đổi,주문/클레임 상세 > 처리 버튼,사용
+B00035,회수 #{{str}},Collection #{{str}},回収 #{{str}},回收 #{{str}},回收 #{{str}},Recolección #{{str}},Thu hồi #{{str}},주문/클레임 상세 > 상세보기 버튼,사용
+B00036,회원상세,Member Details,会員詳細,會員詳情,会员详情,Detalles del Miembro,Chi tiết thành viên,주문/클레임 상세 > 처리 버튼,사용
+B00037,저장,Save,保存,保存,保存,Guardar,Lưu,주문/클레임 상세 > 처리 버튼,미사용
+B00038,정보 변경,Change Info,情報変更,更改資訊,更改信息,Cambiar información,Thay đổi thông tin,배송지변경 버튼,사용
+B00039,확인,Confirm,確認,確認,确认,Confirmar,Xác nhận,,사용
+B00040,취소,Cancel,キャンセル,取消,取消,Cancelar,Hủy,,사용
+B00041,교환 승인,Approve exchange,交換承認,同意換貨,同意换货,Aprobar intercambio,Phê duyệt đổi hàng,,사용
+B00042,교환 거절,Deny exchange,交換拒否,拒絕換貨,拒绝换货,Denegar intercambio,Từ chối đổi hàng,,사용
+B00043,반품 승인,Approve return,返品承認,同意退貨,同意退货,Aprobar devolución,Phê duyệt trả hàng,,사용
+B00044,반품 거절,Deny return,返品拒否,拒絕退貨,拒绝退货,Denegar devolución,Từ chối trả hàng,,사용
+B00045,교환 출고준비,Preparing to ship exchange,交換出荷準備,準備換貨出庫,准备换货出库,Preparando el envío del intercambio,Chuẩn bị xuất kho đổi hàng,,사용
+B00046,회수완료 처리,Mark as collection completed,回収完了処理,回收完成,回收完成,Marcar como recolección completada,Đã xử lý thu hồi thành công,,사용
+B00047,교환 배송완료 처리,Mark exchange as delivered,交換配送完了処理,換貨配送完成,换货配送完成,Marcar el intercambio como entregado,Đã xử lý giao hàng đổi hàng,,사용
+B00048,다음으로,Next,次へ,下一步,下一步,Siguiente,Tiếp tục,,사용
+B00049,머무르기,Stay,このまま続ける,繼續編輯,继续编辑,Seguir editando,Ở lại,,사용
+B00050,돌아가기,Back,戻る,返回,返回,Atrás,Quay lại,,사용
+B00051,교환접수,Exchange requested,交換受付,受理換貨,受理换货,Cambio cancelado,Nhận yêu cầu đổi hàng,,사용
+B00052,상세화면 보기,View details,詳細画面を見る,查看詳情頁面,查看详情页面,Ver detalles,Xem chi tiết,,사용
+B00053,교환승인 및 출고준비,Approve exchange and prepare to release,交換承認と出荷準備,同意換貨與準備出庫,同意换货与准备出库,Aprobar el intercambio y preparar la salida,Phê duyệt đổi hàng và chuẩn bị xuất kho,,사용
+B00054,반품접수,Return requested,返品受付,受理退貨,受理退货,Devolución cancelada,Nhận yêu cầu trả hàng,,사용
+B00055,추가,Add,追加,添加,添加,Agregar,Thêm,,사용
+B00056,삭제,Delete,削除,刪除,删除,Borrar,Xóa,,사용
+B00057,추가하기,Add,追加する,添加,添加,Agregar,Thêm,,사용
+B00058,#배송상세,#Shipping Details,#配送詳細,#配送詳情,#配送详情,#Detalles de envío,#Chi tiết vận chuyển,주문상세 제공 각 상세화면 보기 버튼,미사용
+B00059,#회수상세,#Collection Details,#回収詳細,#回收詳情,#回收详情,#Detalles de recolección,#Chi tiết thu hồi,주문상세 제공 각 상세화면 보기 버튼,미사용
+B00060,#교환상세,#Exchange Details,#交換詳細,#換貨詳情,#换货详情,#Detalles del intercambio,#Chi tiết đổi hàng,주문상세 제공 각 상세화면 보기 버튼,사용
+B00061,#반품상세,#Return Details,#返品詳細,#退貨詳情,#退货详情,#Detalles de devolución,#Chi tiết trả hàng,주문상세 제공 각 상세화면 보기 버튼,사용
+B00062,#취소상세,#Cancellation Details,#キャンセル詳細,#取消詳情,#取消详情,#Detalles de cancelación,#Chi tiết hủy,주문상세 제공 각 상세화면 보기 버튼,사용
+B00063,구매하기,Purchase,購入する,購買,购买,Comprar,Mua hàng,,사용
+B00064,쇼핑 계속하기,Continue Shopping,ショッピングを続ける,繼續購物,继续购物,Seguir comprando,Tiếp tục mua sắm,,사용
+B00065,완료,Add,完了,完成,完成,Agregar,Hoàn tất,유저피드 포스트 등록 시 첨부 (추가 의미의 완료),미사용
+B00066,닫기,Close,閉じる,關閉,关闭,Cerrar,Đóng,팝업 닫기,사용
+B00067,다시 보지 않기,Don't show this again,今後は表示しない,不再查看,不再查看,No mostrar esto de nuevo,Đừng hiển thị lại,팝업 다시보지 않기,미사용
+B00068,로그인,Log in,ログインする,登入,登录,Iniciar sesión,Đăng nhập,,미사용
+B00069,교환요청,Request Exchange,交換リクエスト,請求換貨,请求换货,Solicitar intercambio,Yêu cầu đổi hàng,,사용
+B00070,반품요청,Request Return,返品,請求退貨,请求退货,Solicitar devolución,Yêu cầu trả hàng,,사용
+B00071,취소상세,Cancellation Details,キャンセル詳細,取消詳情,取消详情,Detalles de cancelación,Chi tiết hủy,,사용
+B00072,반품상세,Return Details,返品詳細,退貨詳情,退货详情,Detalles de devolución,Chi tiết trả hàng,,사용
+B00073,교환상세,Exchange Details,交換詳細,換貨詳情,换货详情,Detalles del intercambio,Chi tiết đổi hàng,,사용
+B00074,구매확정,Confirm Purchase,購入確定,確認購買,确认购买,Confirmar compra,Xác nhận mua hàng,B00009 구매확정은 상태값명,사용
+B00075,장바구니,Add to Cart,カート,購物車,购物车,Agregar al carrito,Giỏ hàng,,미사용
+B00076,보러 가기,View Cart,見る,跳轉查看,跳转查看,Ver carrito,Xem,,사용
+B00077,배송비 정보,Shipping fee info,送料情報,配送費資訊,配送费信息,Salir,Thông tin phí vận chuyển,,사용
+B00078,수량 변경,Change quantity,数量変更,修改數量,修改数量,Descargar,Thay đổi số lượng,,사용
+B00079,가입하기,Join,登録する,加入,加入,Atrás,Đăng ký,,사용
+B00080,구매 확정 취소,Cancel confirmation of purchase,購入確定キャンセル,取消確認購買,取消确认购买,Cancelar la solicitud de envío,Hủy xác nhận mua hàng,주문/클레임 상세 > 처리 버튼,사용
+B00081,나가기,Leave,閉じる,退出,退出,Ver detalles,Thoát,,미사용
+B00082,다운로드,Download,ダウンロード,下載,下载,Descargar solicitud,Tải xuống,엑셀 다운로드,사용
+B00083,이전,Back,前へ,上一步,上一步,Salir,Trước,,미사용
+B00084,출고요청 취소,Cancel Shipping Request,出荷要請のキャンセル,取消請求出庫,取消请求出库,Descargar,Hủy yêu cầu xuất kho,,사용
+B00085,출고 취소,Cancel forwarding,出荷キャンセル,取消出庫,取消出库,Cancelar expedición,Hủy xuất kho,,사용
+B00086,상세보기,View details,詳細を見る,查看詳情,查看详情,Atrás,Xem chi tiết,,사용
+B00087,다운로드 요청,Request download,ダウンロード要請,請求下載,请求下载,Solicitar descarga,Yêu cầu tải xuống,엑셀 다운로드,사용
+B00088,변경하기,Change,変更する,更改,更改,Cambiar,Thay đổi,,사용
+B00089,해제하기,Remove,解除する,解除,解除,Eliminar,Hủy kích hoạt,,미사용
+B00090,이메일 인증하기,Verify email,メール認証をする,電子信件驗證,电子邮件验证,Verificar correo electrónico,Xác thực email,,사용
+B00091,동의,Agree,同意,同意,同意,Aceptar,Đồng ý,,사용
+B00092,임시 저장,Drafts,一時保存,臨時保存,临时保存,Guardar temporalmente,Lưu tạm thời,,
+B00093,휴면 해제 완료,Reactivate account,休眠解除完了,已解除休眠狀態,休眠解除完毕,Reactivar cuenta,Đã kích hoạt lại tài khoản,,사용
+B00094,수정하기,Edit,修正する,修改,修改,Editar,Sửa,,
+B00095,{{str}} 부터 구매 가능,Available starting {{str}},{{str}}から購入可能,{{str}}起可進行購買,可以从{{str}}开始购买,Disponible a partir de {{str}},Có thể mua từ {{str}},,
+B00096,내 티켓 보러 가기,View my ticket(s),チケットはこちら,前往查看我的票券,前往查看我的门票,Consultar mi(s) boleto(s),Xem vé của tôi,,
+B00097,필터 지우기,Clear Filter(s),フィルターを削除する,清除篩選器,清除筛选器,Limpiar filtro(s),Xóa bộ lọc,,
+B00098,지급하기,Gift Ticket(s),支給する,支付,支付,Boleto(s) de regalo,Cấp,,
+B00099,설정하기,Settings,設定する,設定,设置,Ajuste,Cài đặt,,
+B00100,옵션 삭제하기,Delete Option,オプションを削除する,刪除選項,删除选项,Eliminar opción,Xóa tùy chọn,,
+B00101,적용하기,Apply,適用する,適用,适用,Aplicar,Áp dụng,,
+B00102,보기,View,見る,查看,查看,Consultar,Xem,,
+B00103,인증 코드 보내기,Send verification code,認証コードを送信する,發送驗證碼,发送认证码,Enviar código de verificación,Gửi mã xác thực,,
+B00104,인증하기,Verify,認証する,驗證,认证,Autenticar,Xác thực,,
+B00105,활성화,Activate,有効化,啟用,激活,Activar,Kích hoạt,,
+B00106,비활성화,Disable,無効化,停用,不激活,Desactivar,Hủy kích hoạt,,
+B00107,인증 해제,Deauthorize,認証解除,解除驗證,解除认证,Desautorizar,Hủy xác thực,,
+B00108,임시저장,Save Temporarily,一時保存,暫存,临时保存,Guardar temporalmente,Lưu tạm thời,,
+B00109,설정,Settings,設定,設定,设置,Configuración,Cài đặt,,
+B00110,게시하기,Publish,投稿する,發表,发表,Publicar,Đăng bài,,
+B00111,예약하기,Schedule,予約する,預約,预约,Programar,Đặt lịch,,
+B00112,연동하기,Link,連動する,聯動,联动,Vincular,Liên kết,,
+B00113,필터 모두 지우기,Remove all filters,フィルターをすべて削除する,清除所有篩選器,清除所有筛选器,Eliminar todos los filtros,Xóa tất cả bộ lọc,,
+B00114,전체 삭제,Delete all,すべて削除,全部刪除,全部删除,Eliminar todo,Xóa tất cả,,
+B00115,편집하기,Edit,編集する,編輯,编辑,Editar,Chỉnh sửa,,
+B00116,URL 복사하기,Copy URL,URLコピー,複製URL,复制URL,Copiar URL,Sao chép URL,,
+B00117,확인,OK,確認,確認,确认,OK,Xác nhận,,
+B00118,유형 상품 추가하기 (새 창),Add tangible product (new window),有形商品を追加する (新しいウィンドウ),添加實物商品（新視窗）,添加实物商品（新窗口）,Agregar producto tangible (nueva ventana),Thêm sản phẩm vật lý (cửa sổ mới),,
+B00119,디지털 이용권 추가하기 (새 창),Add digital voucher (new window),デジタル利用券を追加する (新しいウィンドウ),新增電子使用券（新視窗）,添加电子券（新窗口）,Agregar vale digital (nueva ventana),Thêm mã sử dụng sản phẩm điện tử (cửa sổ mới),5/31 배포에 따라 영일중스 모두 수정필요,
+B00120,멤버십 추가하기 (새 창),Add membership (new window),メンバーシップを追加する (新しいウィンドウ),添加會員（新視窗）,添加会员（新窗口）,Agregar suscripción (nueva ventana),Thêm thành viên (cửa sổ mới),,
+B00121,카테고리 선택,Choose Category,カテゴリー選択,選擇類別,选择类别,Escoger categoría,Chọn danh mục,,
+B00122,카테고리 설정 (새 창),Category settings (new window),カテゴリー設定 (新しいウィンドウ),設定類別（新視窗）,设置类别（新窗口）,Configuración de la categoría (nueva ventana),Cài đặt danh mục (cửa sổ mới),,
+B00123,새로고침,Refresh,更新,重新整理,刷新,Actualizar,Làm mới,,
+B00124,확인하기,Confirm,確認,確認,确认,Confirmar,Xác nhận,,
+B00125,더보기,View more,詳細を見る,查閱詳細資料,查看详情,Ver más,Xem thêm,,
+B00126,필터 지우기,Clear Filter,フィルターを削除する,清除篩選器,清除筛选器,Borrar filtro,Xóa bộ lọc,,
+B00127,모든 필터 지우기,Clear All Filters,すべてのフィルターを削除する,清除所有篩選器,清除所有筛选器,Borrar todos los filtros,Xóa tất cả bộ lọc,,
+B00128,파일 선택,Select a File,ファイル選択,選擇檔案,选择文件,Seleccionar archivo,Chọn tập tin,,
+B00129,초기화,Refresh,初期化,重置,重置,Actualizar,Khởi tạo lại,,
+B00130,확대,Zoom In,拡大,放大,放大,Acercar,Phóng to,,
+B00131,축소,Zoom Out,縮小,縮小,缩小,Alejar,Thu nhỏ,,
+B00132,템플릿 파일 다운로드,Download Template,テンプレートファイルをダウンロード,下載範例檔案,下载示例文件,Descargar plantilla,Tải xuống tập tin mẫu,,
+B00133,전체 선택,Select all,すべて選択,全選,全选,Seleccionar todo,Chọn tất cả,,
+B00134,해제,Remove,解除,解除,解除,Eliminar,Bỏ chọn,,
+B00135,파일 추가,Add File,ファイル追加,添加檔案,添加文件,Agregar archivo,Thêm tập tin,,
+B00136,엑셀 다운로드,Download Excel File,エクセルファイルでダウンロード,下載Excel,下载Excel,Descargar archivo Excel,Tải xuống Excel,,
+B00137,편집 완료,Edit Complete,編集完了,編輯完成,编辑完成,Edición Completa,Hoàn tất chỉnh sửa,편집된 내용 적용하는 버튼,
+B00138,검색,Search,検索,搜尋,搜索,Buscar,Tìm kiếm,,
+B00139,종료하기,End,終了する,關閉,结束,Finalizar,Thoát,,
+B00140,로그인,Log in,ログインする,登入,登录,Iniciar sesión,Đăng nhập,,
+B00141,POP 전용 이용권 추가하기 (새 창),Add POP Only Voucher (New window),ポップ専用利用券を追加する（新しいウィンドウ）,新增POP專用使用券（新視窗）,添加POP专用券（新窗口）,Agregar vale Sólo POP (Nueva ventana),Thêm mã sử dụng POP (cửa sổ mới),,
+B00142,차단해제,Unblock,ブロック解除,解除封鎖,解除封禁,Desbloquear,Bỏ chặn,,
+B00143,차단하기,Block,遮断する,遮罩,屏蔽,Bloquear,Chặn,,
+B00144,초기화,Reset,初期化,重置,重置,Reiniciar,Khởi tạo lại,,
+B00145,실행 취소,Undo,元に戻す,撤銷,撤消,Deshacer,Hoàn tác,,
+B00146,다시 실행,Redo,再実行,再次運行,再次运行,Rehacer,Làm lại,,
+B00147,이용권 구매하기,Get Voucher,利用券を購入する,購買使用券,购买使用券,Obtener vale,Mua mã sử dụng,,
+B00148,"네, 사용할게요.","Yes, use this Voucher.",はい、使用します。,是的，確認使用。,是的，确认使用。,"Sí, utilizar este vale.","Vâng, tôi sẽ sử dụng",,
+B00149,자세히,Details,詳しく,詳情,详情,Detalle,Chi tiết,,
+B00150,구매하기,Buy,購入する,購買,购买,Comprar,Mua,,
+B00151,스타 변경,Change Star(s),スター変更,更改明星,更改明星,Cambiar Star(s),Đổi nghệ sĩ,,
+B00152,변경하기,Edit,変更する,更改,更改,Editar,Thay đổi,,
+B00153,"네, 저장할게요","Yes, I'll save",変更する,更改,更改,Cambiar,"Vâng, tôi sẽ lưu lại",,
+B00154,바로가기,Get Started,ショートカット,快速入口,快捷方式,Acceso directo,Đến ngay,,
+B00155,이용권 모두 보기,See all Vouchers,チケットはこちら,查看所有使用券,查看所有的使用券,Consultar todos los Vales,Xem tất cả mã sử dụng,,
+B00156,구독하기,Subscribe,購読する,訂閱,订阅,Suscríbete,Đăng ký,,
+B00157,바로 입장하기,Enter Now,今すぐ入場する,立即進入,立即进入,Entrar ahora,Vào ngay,,
+B00158,채팅 접기,Collapse Chat,チャットを閉じる,關閉聊天窗口,折叠聊天窗口,Contraer Chat,Thu gọn trò chuyện,,
+B00159,채팅 펼치기,Expand Chat,チャットを開く,開啟聊天窗口,展开聊天窗口,Expandir Chat,Mở rộng trò chuyện,,
+B00160,선택 완료,Finish Setting,選択完了,選擇結束,选择完毕,Finalizar Configuración,Chọn xong,,
+B00191,내 이용권 보기,See My Voucher,利用券を確認,查看我的使用券,查看我的使用券,Consultar Mi Vale,Xem mã sử dụng của tôi,,
+B00192,소셜 링크 관리,Social Links Settings,ソーシャルリンク管理,管理社群媒體連接,管理社交媒体链接,Configuración de enlaces sociales,Quản lý liên kết xã hội,,
+B00193,충전하기,,充電する,,,,,,
+B00194,주문내역 보기,,注文履歴を確認,,,,,,
+B00195,전체내용 삭제,Delete All,すべての内容を削除,刪除全部內容,删除全部内容,Eliminar todo,Xóa tất cả nội dung,,
+B00196,POP 설정,POP Settings,POP 設定,POP 設定,POP 设置,Configuración dePOP,Cài đặtPOP,[Admin] 콘텐츠 > 팝 관리,
+B00197,이동하기,Move,移動する,跳轉,跳转,Mover,Di chuyển,,
+B00198,바로가기,Continue,ショートカット,現在跳轉,现在跳转,Continuar,Đến ngay,,
+B00199,계정 확인하기,Check Account,アカウントを確認する,確認帳號,确认账号,Comprobar Cuenta,Xác nhận tài khoản,,
+B00200,참여하기,Join,参加する,參與,立即参与,Unirse,Tham gia,,
+B00201,나중에,Later,あとでする,以後再說,以后再说,Ahora no,Để sau,,
+B00202,계속 진행,Continue,続ける,繼續進行,继续进行,Continuar,Tiếp tục,,
+B00203,결제하기,Make a Payment,お支払い,支付,支付,Hacer un pago,Thanh toán,,
+B00204,결제정보 확인,Check payment information,お支払い情報の確認,查詢付款紀錄,确认付款信息,Verifica la información de pago,Kiểm tra thông tin thanh toán,Japan Localization,
+B00205,지급하기,Issue Rewards,付与する,支付,支付,Aplicar,Cấp,,
+B00206,연결하기,Link,連携する,連接,连接,Vincular,Kết nối,[Admin] 상품 > 유형상품 > 현장수령 상품 > 행사&회차 연결,
+B00207,운영하기,Operate,運営を開始する,開始運行,开始运营,Operar,Vận hành,[Admin] 상품 > 현장수령 ,
+B00208,해제하기,Unlink,解除する,解除,解除,Desvincular,Hủy kết nối,[Admin] 상품 > 현장수령 ,
+B00209,연결하기,Link,連携する,連接,连接,Vincular,Kết nối,[Admin] 상품 > 현장수령 ,
+B00210,전송하기,Send,転送する,傳送,发送,Enviar,Gửi,[Admin] 상품 > 현장수령 ,
+B00211,일괄 취소,Bulk Cancel,一括キャンセル,批量取消,批量取消,Cancelación en masa,Hủy hàng loạt,[Admin] 상품 > 현장수령 ,
+B00212,알림 발송,Send Notification,通知の送信,寄發通知,发送通知,Enviar notificación,Gửi thông báo,[Admin] 상품 > 현장수령 ,
+B00213,현장 관리,Manage Site,現地の管理,管理提取,管理领取,Gestionar recogida,Quản lý tại chỗ,[Admin] 주문> 현장수령 주문,
+B00214,입력하기,Enter,入力する,輸入,输入,Introducir,Nhập,[Admin] 어카운트 > 현장운영자 접속,
+B00215,운영하기,Operate,運営する,營運,运营,Operar,Vận hành,[Admin] 어카운트 > 현장운영자 접속,
+B00216,검색하기,Search,検索する,搜尋,搜索,Buscar,Tìm kiếm,[Admin] 어카운트 > 현장운영자 접속,
+B00217,수령 확인,Check Pickup,受け取り確認,確認提取,确认领取,Comprobar recogida,Xác nhận đã nhận,[Admin] 어카운트 > 현장운영자 접속,
+B00218,수령 취소,Cancel Pickup,受け取りキャンセル,取消提取,取消领取,Cancelar recogida,Hủy nhận,[Admin] 어카운트 > 현장운영자 접속,
+B00219,회차 변경하기,Change Round,ラウンドの変更,變更場次,更改场次,Cambiar ronda,Thay đổi phiên,[User/Admin] 현장수령,
+B00220,QR 코드 보기,View QR Code,QRコードを確認,查看QR碼,查看QR码,Ver código QR,Xem mã QR,[User/Admin] 현장수령,
+B00221,주문 불가,Order Unavailable,注文不可,無法訂購,不可预订,Pedido no disponible,Không thể đặt hàng,[User/Admin] 현장수령,
+B00222,불러오기,Import,呼び出す,載入,载入,Importar,Tải lên,,
+B00223,가이드,Guide,ガイド,導覽,指南,Guía,Hướng dẫn,,
+B00224,자세히 보기,View more,詳しく見る,查看更多,查看更多,Ver más,Xem chi tiết,,
+B00225,결제 취소,Cancel Payment,お支払いキャンセル,取消付款,取消支付,Cancelar pago,Hủy thanh toán,,
+B00226,정기결제 해지,Cancel Subscription,サブスクリプション解約,取消自動續訂,取消定期支付,Cancelar suscripción,Hủy đăng ký định kỳ,,
+B00227,사용 확인 (운영자용),Redeem Ticket (Operators Only),使用確認（管理者用）,使用確認（管理者用）,使用确认（管理员用）,Confirmar uso\n(para admin),Xác nhận sử dụng (admin),[User/Admin] 현장수령,
+B00228,구매하러 가기,Go to purchase,購入へ移動,前往購買,前往购买,Ir a la compra,Đi mua,,
+B00229,서비스에 적용,Apply,サービスに適用,服務中應用,服务中应用,Publicar,Áp dụng cho dịch vụ,,
+B00230,해지하기,Cancel,解約する,取消訂閱,取消订阅,Cancelar,Hủy,,
+B00231,계속 쓰기,Continue,つづきを書く,繼續使用,继续使用,Continuar,Tiếp tục viết,,
+B00232,받기,Download,受け取る,接收,接收,Descargar,Nhận,[User] 스티커 스토어,
+B00233,확인 완료,Confirm,確認完了,確認的,确认的,Confirmar,Đã xác nhận,[Admin] 스티커 스토어,
+B00234,바로 반영하기,Apply now,すぐに反映,立即反映,立即反映,Aplica ya,Áp dụng ngay,,
+B00235,반영하지 않고 저장,Save without applying,反映せずに保存,保存而不反映,保存而不反映,Guardar sin aplicar,Lưu mà không áp dụng,,
+B00236,재전송하기,Resend,再送信する,重發,重发,Reenviar,Gửi lại,,
+B00237,계속 결제하기,Continue checkout,決済を続ける,繼續付款,继续付款,Continuar pago,Tiếp tục thanh toán,,
+B00238,계속하기,Continue,続行する,繼續,继续,Continuar,Tiếp tục,,
+B00239,구매 불가,Unable to purchase,購入不可,不可購買,不可购买,No se puede comprar,Không thể mua,,
+B00240,"네, 확인했어요","Yes, I checked.",はい、確認しました。,是的，我檢查過。,是的，我检查过。,"Sí, lo comprobé.","Vâng, tôi đã kiểm tra",,
+B00241,댓글 다운로드,Download comments,コメントを\nダウンロード,下載評論,下载评论,Descargar comentarios,Tải xuống bình luận,,
+B00242,입력완료,Complete,入力完了,輸入完成,输入完成,Completo,Nhập xong,,
+B00243,등록하기,Create,登録する,登記,登记,Crear,Đăng ký,,
+B00244,설정하기,Connect,設定する,設定,设置,Conectar,Cài đặt,팝전용 이용권 > 이용권 생성 > 스타계정 연결,
+B00245,알림받기,Notify me,通知を受け取る,取得通知,获取通知,Notificarme,Nhận thông báo,,
+B00246,전체보기,View all,全て見る,看全部,查看全部,Ver todo,Xem tất cả,,
+B00247,동의하기,Agree,同意する,同意,同意,Aceptar,Đồng ý,,
+B00248,가입하기,Sign up,サインアップ,註冊,注册,Registrarse,Đăng ký,,
+B00249,비밀번호 재설정,Reset password,パスワード変更,重設密碼,重置密码,Reestablecer,Đặt lại mật khẩu,,
+B00250,접기,Collapse,折りたたむ,收合,收起,Contraer,Thu gọn,,
+B00251,펼치기,Expand,展開する,展開,展开,Expandir,Mở rộng,,
+B00252,설정하기,Go to Settings,設定する,設定,设置,Configurar,Cài đặt,,
+B00253,비밀번호 설정,Create Password,パスワード設定,密碼設定,设置密码,Crear contraseña,Đặt mật khẩu,,
+B00254,투표,Vote,投票,投票,投票,Votar,Chọn,,
+B00255,투표하기,Vote,投票する,投票,投票,Votar,Bình chọn,,
+B00256,투표 상세로 가기,Go to event page,投票の詳細へ,前往活動頁面,前往活动页,Ir al evento,Đến trang sự kiện,,
+B00257,삭제하고 적용하기,Discard and Apply,削除して適用,捨棄並套用,放弃并应用,Descartar y aplicar,Bỏ qua và Áp dụng,,
+B00258,입력,,,,,,,,
+B00259,,,,,,,,,
+B00260,,,,,,,,,
+B00261,,,,,,,,,
+B00262,,,,,,,,,
+B00263,,,,,,,,,
+B00264,,,,,,,,,
+B00265,,,,,,,,,
+B00266,,,,,,,,,
+B00267,,,,,,,,,
+B00268,,,,,,,,,
+B00269,,,,,,,,,
+B00270,,,,,,,,,
+B00271,,,,,,,,,
+B00272,,,,,,,,,
+B00273,,,,,,,,,
+B00274,,,,,,,,,
+B00275,,,,,,,,,
+B00276,,,,,,,,,
+B00277,,,,,,,,,
+B00278,,,,,,,,,
+B00279,,,,,,,,,
+B00280,,,,,,,,,
+B00281,,,,,,,,,
+B00282,,,,,,,,,
+B00283,,,,,,,,,
+B00284,,,,,,,,,
+B00285,,,,,,,,,
+B00286,,,,,,,,,
+B00287,,,,,,,,,
+B00288,,,,,,,,,
+B00289,,,,,,,,,
+B00290,,,,,,,,,
+B00291,,,,,,,,,
+B00292,,,,,,,,,
+B00293,,,,,,,,,
+B00294,,,,,,,,,
+B00295,,,,,,,,,
+B00296,,,,,,,,,

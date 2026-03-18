@@ -41,6 +41,7 @@ type: feedback
 - `layout` 기본값: `"wide"` (1080px). full은 예외 케이스.
 - 우측 아이콘 기본: 알림, 캘린더, 장바구니, 마이페이지 순서.
 - `showBorder` prop으로 보더 유무 제어 가능.
+- **PC에서는 `view` 타입이 없다.** 모바일에서 `view`로 보이는 페이지는 PC에서 `home`으로 전환해야 함. `useBreakpoint()`의 `isDesktop`으로 `type={isDesktop ? "home" : "view"}` 처리.
 
 ## 디버그 패널
 - 모든 마크업 페이지에 디버그 패널 기본 포함.

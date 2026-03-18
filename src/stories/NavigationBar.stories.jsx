@@ -154,9 +154,16 @@ export const AllTypes = {
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Navigation Top Bar</h2>
       <p style={{ fontSize: 13, color: "var(--color-light-text-quaternary)", marginBottom: 24 }}>
         GNB 타입별 미리보기 (Mobile &amp; PC × Light &amp; Dark)
+        <br />
+        <span style={{ fontSize: 12, color: "var(--color-light-text-quaternary)", fontFamily: mono }}>
+          * PC에서는 view 타입이 없음 — view는 모바일 전용이며, PC에서는 home으로 전환됨
+        </span>
       </p>
 
-      {["home", "view", "utility"].map((type) => (
+      {["home", "view", "utility"].map((type) => {
+        // PC에서는 view 타입이 없으므로 home으로 전환
+        const pcType = type === "view" ? "home" : type;
+        return (
         <div key={type} style={{ marginBottom: 40 }}>
           <div
             style={{
@@ -172,6 +179,7 @@ export const AllTypes = {
             }}
           >
             TYPE: {type}
+            {type === "view" && <span style={{ fontWeight: 400, fontSize: 11, letterSpacing: 0, textTransform: "none", marginLeft: 8 }}>(PC → home으로 전환)</span>}
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 8 }}>
@@ -186,23 +194,24 @@ export const AllTypes = {
           </div>
 
           {/* PC Full Light */}
-          <PreviewFrame dark={false} device="pc" label="PC / Light / layout: full">
-            <NavigationBar type={type} device="pc" theme="light" layout="full" logoImage={sampleLogoSymbol} />
+          <PreviewFrame dark={false} device="pc" label={`PC / Light / layout: full${type === "view" ? " (→ home)" : ""}`}>
+            <NavigationBar type={pcType} device="pc" theme="light" layout="full" logoImage={sampleLogoSymbol} />
           </PreviewFrame>
           {/* PC Wide Light */}
-          <PreviewFrame dark={false} device="pc" label="PC / Light / layout: wide (1080px)">
-            <NavigationBar type={type} device="pc" theme="light" layout="wide" logoImage={sampleLogoSymbol} />
+          <PreviewFrame dark={false} device="pc" label={`PC / Light / layout: wide (1080px)${type === "view" ? " (→ home)" : ""}`}>
+            <NavigationBar type={pcType} device="pc" theme="light" layout="wide" logoImage={sampleLogoSymbol} />
           </PreviewFrame>
           {/* PC Full Dark */}
-          <PreviewFrame dark={true} device="pc" label="PC / Dark / layout: full">
-            <NavigationBar type={type} device="pc" theme="dark" layout="full" logoImage={sampleLogoSymbol} />
+          <PreviewFrame dark={true} device="pc" label={`PC / Dark / layout: full${type === "view" ? " (→ home)" : ""}`}>
+            <NavigationBar type={pcType} device="pc" theme="dark" layout="full" logoImage={sampleLogoSymbol} />
           </PreviewFrame>
           {/* PC Wide Dark */}
-          <PreviewFrame dark={true} device="pc" label="PC / Dark / layout: wide (1080px)">
-            <NavigationBar type={type} device="pc" theme="dark" layout="wide" logoImage={sampleLogoSymbol} />
+          <PreviewFrame dark={true} device="pc" label={`PC / Dark / layout: wide (1080px)${type === "view" ? " (→ home)" : ""}`}>
+            <NavigationBar type={pcType} device="pc" theme="dark" layout="wide" logoImage={sampleLogoSymbol} />
           </PreviewFrame>
         </div>
-      ))}
+        );
+      })}
     </div>
   ),
 };
@@ -297,8 +306,11 @@ function PlaygroundUI() {
 
   const dark = theme === "dark";
 
+  // PC에서는 view 타입이 없음 → home으로 전환
+  const resolvedType = (device === "pc" && type === "view") ? "home" : type;
+
   const navProps = {
-    type,
+    type: resolvedType,
     device,
     theme,
     layout: device === "pc" ? layout : "full",
@@ -858,7 +870,7 @@ function PlaygroundUI() {
               }}
             >
 {`<NavigationBar
-  type="${type}"
+  type="${resolvedType}"${resolvedType !== type ? ` // "${type}" → PC에서 "${resolvedType}"로 전환` : ""}
   device="${device}"
   theme="${theme}"${device === "pc" ? `\n  layout="${layout}"` : ""}
   showBorder={${showBorder}}${type === "home" ? `
@@ -872,10 +884,12 @@ function PlaygroundUI() {
 
           {/* Compare: same width, all types */}
           <SectionTitle>COMPARE TYPES</SectionTitle>
-          {["home", "view", "utility"].map((t) => (
+          {["home", "view", "utility"].map((t) => {
+            const ct = (device === "pc" && t === "view") ? "home" : t;
+            return (
             <div key={t} style={{ marginBottom: 12 }}>
               <div style={{ fontSize: 10, color: "var(--color-light-text-quaternary)", fontFamily: mono, marginBottom: 4 }}>
-                {t.toUpperCase()}
+                {t.toUpperCase()}{ct !== t ? ` → ${ct.toUpperCase()} (PC)` : ""}
               </div>
               <div
                 style={{
@@ -888,10 +902,11 @@ function PlaygroundUI() {
                   transition: "width 0.2s ease, background 0.2s",
                 }}
               >
-                <NavigationBar {...navProps} type={t} />
+                <NavigationBar {...navProps} type={ct} />
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

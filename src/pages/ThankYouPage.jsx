@@ -8,6 +8,7 @@ import defaultProfile from "../assets/default-profile/star.png";
 import defaultThumbnail from "../assets/default-profile/thumbnail_default.png";
 import lottieCheckLight from "../assets/lottie/thankyou-check-light.json";
 import lottieCheckDark from "../assets/lottie/thankyou-check-dark.json";
+import { t, tRich } from "../i18n";
 
 /*
  * ThankYouPage — 주문 완료(땡큐) 페이지
@@ -172,7 +173,7 @@ function LottieCheck({ theme }) {
   );
 }
 
-function SuccessHeader({ theme }) {
+function SuccessHeader({ theme, lang = "ko" }) {
   return (
     <div
       style={{
@@ -201,14 +202,30 @@ function SuccessHeader({ theme }) {
             textAlign: "center",
           }}
         >
-          주문을 완료했어요
+          {t("S03000", lang)}
         </span>
       </div>
     </div>
   );
 }
 
-function KonbiniNotice({ theme, hasPaymentLink = false }) {
+function KonbiniNotice({ theme, hasPaymentLink = false, lang = "ko" }) {
+  const descCode = hasPaymentLink ? "S02793" : "S02703";
+
+  const descContent = hasPaymentLink
+    ? tRich(descCode, lang, {
+        0: (text) => (
+          <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            style={{ color: v(`${theme}/text/blue`), textDecoration: "none" }}
+          >
+            {text}
+          </a>
+        ),
+      })
+    : t(descCode, lang);
+
   return (
     <div
       style={{
@@ -226,7 +243,7 @@ function KonbiniNotice({ theme, hasPaymentLink = false }) {
           color: v(`${theme}/text/blue`),
         }}
       >
-        2023.02.18. 오후 11:59 결제를 완료해주세요.
+        {t("S02702", lang, { str1: "2023.02.18. 오후 11:59" })}
       </span>
       <span
         style={{
@@ -234,23 +251,7 @@ function KonbiniNotice({ theme, hasPaymentLink = false }) {
           color: v("always/lightgrey100"),
         }}
       >
-        결제가 완료되어야 상품을 이용할 수 있습니다. 주문 확인 후, 이메일 혹은 주문
-        상세에 기재된{" "}
-        {hasPaymentLink ? (
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            style={{
-              color: v(`${theme}/text/blue`),
-              textDecoration: "none",
-            }}
-          >
-            결제 지침 및 안내 사항
-          </a>
-        ) : (
-          "결제 지침 및 안내 사항"
-        )}
-        을 바탕으로 결제를 완료해주세요.
+        {descContent}
       </span>
     </div>
   );
@@ -440,7 +441,7 @@ function AdditionalInfo({ theme }) {
   );
 }
 
-function ActionButtons({ theme, singleButton = false, isDesktop = false }) {
+function ActionButtons({ theme, singleButton = false, isDesktop = false, lang = "ko" }) {
   return (
     <div
       style={{
@@ -473,7 +474,7 @@ function ActionButtons({ theme, singleButton = false, isDesktop = false }) {
               styleType="fill"
               color="picker"
               size={48}
-              label="홈으로 가기"
+              label={t("S00664", lang)}
               theme={theme}
               fullWidth
             />
@@ -483,7 +484,7 @@ function ActionButtons({ theme, singleButton = false, isDesktop = false }) {
                 styleType="outline"
                 color="mono"
                 size={48}
-                label="홈으로 가기"
+                label={t("S00664", lang)}
                 theme={theme}
                 fullWidth
               />
@@ -491,7 +492,7 @@ function ActionButtons({ theme, singleButton = false, isDesktop = false }) {
                 styleType="fill"
                 color="picker"
                 size={48}
-                label="돌아가기"
+                label={t("B00050", lang)}
                 theme={theme}
                 fullWidth
               />
@@ -507,6 +508,7 @@ function ActionButtons({ theme, singleButton = false, isDesktop = false }) {
 
 export default function ThankYouPage({
   theme = "light",
+  lang = "ko",
   isKonbini = false,
   hasPaymentLink = false,
   singleButton = false,
@@ -520,9 +522,9 @@ export default function ThankYouPage({
 
   return (
     <PageLayout theme={theme}>
-      {/* GNB — NavigationBar 컴포넌트 (type="view", 반응형 device) */}
+      {/* GNB — 모바일: view, PC: home */}
       <NavigationBar
-        type="view"
+        type={isDesktop ? "home" : "view"}
         device={device}
         theme={theme}
         showBorder={false}
@@ -533,10 +535,10 @@ export default function ThankYouPage({
       <Section maxWidth="narrow" padded style={{ flex: 1 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {/* Success header */}
-          <SuccessHeader theme={theme} />
+          <SuccessHeader theme={theme} lang={lang} />
 
           {/* Konbini notice (탑/카드와 형제 레벨) */}
-          {isKonbini && <KonbiniNotice theme={theme} hasPaymentLink={hasPaymentLink} />}
+          {isKonbini && <KonbiniNotice theme={theme} hasPaymentLink={hasPaymentLink} lang={lang} />}
 
           {/* Order card */}
           <OrderCard
@@ -552,7 +554,7 @@ export default function ThankYouPage({
       </Section>
 
       {/* Bottom action buttons (sticky) */}
-      <ActionButtons theme={theme} singleButton={singleButton} isDesktop={isDesktop} />
+      <ActionButtons theme={theme} singleButton={singleButton} isDesktop={isDesktop} lang={lang} />
     </PageLayout>
   );
 }

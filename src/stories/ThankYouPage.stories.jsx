@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ThankYouPage from "../pages/ThankYouPage";
+import { LANGUAGES } from "../i18n";
 
 export default {
   title: "Pages/ThankYouPage",
@@ -69,6 +70,7 @@ const WIDTH_PRESETS = [
 
 function PlaygroundUI() {
   const [theme, setTheme] = useState("light");
+  const [lang, setLang] = useState("ko");
   const [isKonbini, setIsKonbini] = useState(false);
   const [hasPaymentLink, setHasPaymentLink] = useState(false);
   const [singleButton, setSingleButton] = useState(false);
@@ -143,6 +145,7 @@ function PlaygroundUI() {
       >
         <ThankYouPage
           theme={theme}
+          lang={lang}
           isKonbini={isKonbini}
           hasPaymentLink={hasPaymentLink}
           singleButton={singleButton}
@@ -223,6 +226,14 @@ function PlaygroundUI() {
             <ControlRow label="Theme">
               {["light", "dark"].map((t) => (
                 <Chip key={t} label={t} active={theme === t} onClick={() => setTheme(t)} />
+              ))}
+            </ControlRow>
+
+            <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", margin: "8px 0" }} />
+
+            <ControlRow label="Language">
+              {LANGUAGES.map((l) => (
+                <Chip key={l.code} label={l.code} active={lang === l.code} onClick={() => setLang(l.code)} />
               ))}
             </ControlRow>
 
