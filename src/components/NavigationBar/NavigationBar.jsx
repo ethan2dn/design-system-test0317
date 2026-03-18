@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import Icon from "../icons/Icon";
-import Button from "./Button";
+import Icon from "../../icons/Icon";
+import Button from "../Button";
 
 /*
  * Navigation Top Bar
