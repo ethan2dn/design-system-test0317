@@ -148,6 +148,10 @@ function PreviewFrame({ dark, device, children, label }) {
 
 // ── All Types Overview ──
 
+export const Playground = {
+  render: () => <PlaygroundUI />,
+};
+
 export const AllTypes = {
   render: () => (
     <div style={{ fontFamily: "Pretendard, sans-serif", padding: 24 }}>
@@ -913,6 +917,3 @@ function PlaygroundUI() {
   );
 }
 
-export const Playground = {
-  render: () => <PlaygroundUI />,
-};

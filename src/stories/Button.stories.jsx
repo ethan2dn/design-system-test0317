@@ -77,10 +77,10 @@ export default {
   },
 };
 
-// ── Default: Interactive Playground ──
+// ── Playground ──
 
-export const Default = {
-  render: (args) => <Button {...args} />,
+export const Playground = {
+  render: () => <PlaygroundUI />,
 };
 
 // ── Style Types ──
@@ -707,6 +707,3 @@ function PlaygroundUI() {
   );
 }
 
-export const Playground = {
-  render: () => <PlaygroundUI />,
-};
