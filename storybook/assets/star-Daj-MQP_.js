@@ -1,0 +1,1 @@
+import{n as e}from"./chunk-BneVvdWh.js";var t,n=e((()=>{t=``+new URL(`star-CTFbMhNV.png`,import.meta.url).href}));export{t as n,n as t};
