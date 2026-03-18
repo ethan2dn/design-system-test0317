@@ -1,0 +1,1 @@
+import{c as e,h as t}from"./theming-CSbUNWGU.js";e();export{t as color};
