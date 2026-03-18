@@ -154,6 +154,9 @@ export default function Button({
   color = "picker",
   strength = 0,
   disabled = false,
+  loading = false,
+  multiLine = true,
+  radius: radiusOverride,
   label = "Label",
   prefixIcon,
   suffixIcon,
@@ -176,19 +179,22 @@ export default function Button({
   const typo = getTypoVars(config.fontSize);
 
   const isIconOnly = contentType === "icon";
+  const isDisabled = disabled || loading;
+  const finalRadius = radiusOverride !== undefined ? radiusOverride : config.radius;
 
   // Build style
   const buttonStyle = {
     // Reset
     appearance: "none",
-    cursor: disabled ? "not-allowed" : "pointer",
+    cursor: isDisabled ? "not-allowed" : "pointer",
     userSelect: "none",
     // Layout
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
     gap: config.gap,
-    height: config.height,
+    height: multiLine ? undefined : config.height,
+    minHeight: multiLine ? config.height : undefined,
     minWidth: isIconOnly ? config.height : undefined,
     width: fullWidth ? "100%" : undefined,
     padding: isIconOnly
@@ -198,8 +204,8 @@ export default function Button({
     // Visual
     background: colors.bg,
     border: colors.border,
-    borderRadius: config.radius,
-    opacity: disabled ? 0.4 : (colors.opacity || 1),
+    borderRadius: finalRadius,
+    opacity: isDisabled ? 0.4 : (colors.opacity || 1),
     // Typography (CSS variable references)
     fontFamily: "Pretendard, sans-serif",
     fontSize: typo.fontSize,
@@ -207,7 +213,7 @@ export default function Button({
     lineHeight: typo.lineHeight,
     letterSpacing: typo.letterSpacing,
     color: colors.text,
-    whiteSpace: "nowrap",
+    whiteSpace: multiLine ? "normal" : "nowrap",
     // Transition
     transition: "all 0.15s ease",
     position: "relative",
@@ -217,14 +223,17 @@ export default function Button({
 
   // Hover/Active overlay
   const overlays = getOverlays(theme);
-  const showOverlay = !disabled && (hovered || pressed);
+  const showOverlay = !isDisabled && (hovered || pressed);
   const overlayColor = pressed ? overlays.active : overlays.hover;
+
+  // Loading spinner size
+  const spinnerSize = Math.max(14, Math.round(config.iconSize * 0.85));
 
   return (
     <button
       className={className}
       style={buttonStyle}
-      disabled={disabled}
+      disabled={isDisabled}
       onClick={onClick}
       onMouseEnter={() => { if (!isTouchRef.current) setHovered(true); }}
       onMouseLeave={() => { setHovered(false); setPressed(false); isTouchRef.current = false; }}
@@ -248,27 +257,57 @@ export default function Button({
         />
       )}
 
-      {/* Content */}
-      {isIconOnly ? (
-        <Icon name={iconName} size={(iconSizeOverride || config.iconSize)} color={colors.icon} />
-      ) : (
-        <>
-          {prefixIcon && (
-            <Icon name={prefixIcon} size={(iconSizeOverride || config.iconSize)} color={colors.icon} />
-          )}
+      {/* Loading spinner */}
+      {loading && (
+        <span
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            pointerEvents: "none",
+          }}
+        >
           <span
             style={{
-              position: "relative",
-              padding: `0 ${config.gap > 0 ? 4 : 2}px`,
+              width: spinnerSize,
+              height: spinnerSize,
+              border: `2px solid ${colors.text}`,
+              borderTopColor: "transparent",
+              borderRadius: "50%",
+              animation: "btn-spin 0.6s linear infinite",
+              opacity: 0.7,
             }}
-          >
-            {label}
-          </span>
-          {suffixIcon && (
-            <Icon name={suffixIcon} size={(iconSizeOverride || config.iconSize)} color={colors.icon} />
-          )}
-        </>
+          />
+        </span>
       )}
+
+      {/* Content — loading 시 투명 처리 (레이아웃 유지) */}
+      <span style={{ display: "contents", visibility: loading ? "hidden" : "visible" }}>
+        {isIconOnly ? (
+          <Icon name={iconName} size={(iconSizeOverride || config.iconSize)} color={colors.icon} />
+        ) : (
+          <>
+            {prefixIcon && (
+              <Icon name={prefixIcon} size={(iconSizeOverride || config.iconSize)} color={colors.icon} />
+            )}
+            <span
+              style={{
+                position: "relative",
+                padding: `0 ${config.gap > 0 ? 4 : 2}px`,
+                overflow: multiLine ? undefined : "hidden",
+                textOverflow: multiLine ? undefined : "ellipsis",
+              }}
+            >
+              {label}
+            </span>
+            {suffixIcon && (
+              <Icon name={suffixIcon} size={(iconSizeOverride || config.iconSize)} color={colors.icon} />
+            )}
+          </>
+        )}
+      </span>
     </button>
   );
 }

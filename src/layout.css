@@ -145,3 +145,8 @@
     display: block !important;
   }
 }
+
+/* ── Button loading spinner ── */
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}

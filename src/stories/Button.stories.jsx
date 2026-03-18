@@ -421,6 +421,9 @@ function PlaygroundUI() {
   const [color, setColor] = useState("picker");
   const [strength, setStrength] = useState(0);
   const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [multiLine, setMultiLine] = useState(true);
+  const [radius, setRadius] = useState(undefined);
   const [label, setLabel] = useState("Button");
   const [prefixIcon, setPrefixIcon] = useState("");
   const [suffixIcon, setSuffixIcon] = useState("");
@@ -434,6 +437,9 @@ function PlaygroundUI() {
     color,
     strength,
     disabled,
+    loading,
+    multiLine,
+    radius,
     label,
     prefixIcon: prefixIcon || undefined,
     suffixIcon: suffixIcon || undefined,
@@ -500,6 +506,27 @@ function PlaygroundUI() {
           <ControlRow label="disabled">
             <Chip label="false" active={!disabled} onClick={() => setDisabled(false)} />
             <Chip label="true" active={disabled} onClick={() => setDisabled(true)} />
+          </ControlRow>
+
+          <ControlRow label="loading">
+            <Chip label="false" active={!loading} onClick={() => setLoading(false)} />
+            <Chip label="true" active={loading} onClick={() => setLoading(true)} />
+          </ControlRow>
+
+          <ControlRow label="multiLine">
+            <Chip label="true (줄바꿈)" active={multiLine} onClick={() => setMultiLine(true)} />
+            <Chip label="false (말줄임)" active={!multiLine} onClick={() => setMultiLine(false)} />
+          </ControlRow>
+
+          <ControlRow label="radius">
+            {[
+              { label: "default", value: undefined },
+              { label: "0", value: 0 },
+              { label: "6", value: 6 },
+              { label: "999", value: 999 },
+            ].map((r) => (
+              <Chip key={String(r.value)} label={r.label} active={radius === r.value} onClick={() => setRadius(r.value)} />
+            ))}
           </ControlRow>
 
           {contentType === "text" && (
@@ -603,7 +630,9 @@ function PlaygroundUI() {
   size={${size}}
   color="${color}"
   strength={${strength}}
-  disabled={${disabled}}${contentType === "text" ? `
+  disabled={${disabled}}
+  loading={${loading}}
+  multiLine={${multiLine}}${radius !== undefined ? `\n  radius={${radius}}` : ""}${contentType === "text" ? `
   label="${label}"${prefixIcon ? `\n  prefixIcon="${prefixIcon}"` : ""}${suffixIcon ? `\n  suffixIcon="${suffixIcon}"` : ""}` : `
   iconName="${iconName}"`}
 />`}
@@ -770,6 +799,9 @@ function SpecUI() {
             [<SC>color</SC>, <SC>picker | mono | red</SC>, <SC>picker</SC>, "컬러 테마"],
             [<SC>strength</SC>, <SC>0 | -1</SC>, <SC>0</SC>, "0: 강함(strong), -1: 약함(weak)"],
             [<SC>disabled</SC>, <SC>boolean</SC>, <SC>false</SC>, "비활성화 여부 (opacity 0.4)"],
+            [<SC>loading</SC>, <SC>boolean</SC>, <SC>false</SC>, "true 시 중앙에 로딩 스피너 표시 + disabled 상태"],
+            [<SC>multiLine</SC>, <SC>boolean</SC>, <SC>true</SC>, "true: 패딩 내 줄바꿈, false: 한줄 말줄임(ellipsis)"],
+            [<SC>radius</SC>, <SC>number</SC>, "—", "border-radius 오버라이드 (0 / 6 / 999). 미지정 시 size별 기본값"],
             [<SC>label</SC>, <SC>string</SC>, <SC>"Label"</SC>, "버튼 텍스트 (contentType=text)"],
             [<SC>prefixIcon</SC>, <SC>string</SC>, "—", "텍스트 앞 아이콘 이름"],
             [<SC>suffixIcon</SC>, <SC>string</SC>, "—", "텍스트 뒤 아이콘 이름"],
@@ -820,7 +852,11 @@ function SpecUI() {
             ["48", "48px", "16px", "24px", "12×6", "2px", "6px"],
           ]}
         />
-        <SpecNote2><SC>contentType=icon</SC>일 때: padding은 py만 적용 (정사각형에 가까운 형태), minWidth = height.</SpecNote2>
+        <SpecNote2>
+          <SC>contentType=icon</SC>일 때: padding은 py만 적용 (정사각형에 가까운 형태), minWidth = height.
+          <br /><SC>radius</SC> prop으로 border-radius를 오버라이드 가능: 0(직각), 6(기본), 999(pill). 미지정 시 size별 기본값(size 18~20: 4px, 나머지: 6px).
+          <br /><SC>multiLine=true</SC>일 때: height 대신 minHeight 적용, whiteSpace: normal로 줄바꿈 허용.
+        </SpecNote2>
       </SpecSection2>
 
       <SpecSection2 title="타이포그래피 토큰 매핑">
@@ -843,6 +879,7 @@ function SpecUI() {
             ["Default", "기본 스타일 적용", "—"],
             ["Hover", "오버레이 (absolute, inset:0)", <SC>{`{theme}/overlay/hover-grey-a`}</SC>],
             ["Active / Press", "오버레이 (absolute, inset:0)", <SC>{`{theme}/overlay/press-grey-a`}</SC>],
+            ["Loading", "중앙 스피너 + 콘텐츠 hidden + disabled", "스피너: 버튼 텍스트 색상, 2px border, opacity 0.7"],
             ["Disabled", "opacity: 0.4, cursor: not-allowed", "—"],
           ]}
         />
