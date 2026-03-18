@@ -1,0 +1,147 @@
+/* ============================================================
+ * Layout System
+ * b.spoke Design System — Breakpoints, Padding, Max Width
+ *
+ * Breakpoint: 801px (mobile-first)
+ *   - mobile (default): ~800px
+ *   - desktop: 801px~
+ *
+ * Padding: 모듈별 조건부 적용 (전역 X)
+ *   - mobile: 16px horizontal
+ *   - desktop: 32px horizontal
+ *
+ * Max Width (desktop only):
+ *   - wide: 1080px  (대시보드, 리스트, 복잡한 레이아웃)
+ *   - narrow: 704px (텍스트 위주, 폼, 아티클)
+ *   - full: 100%    (히어로 섹션, 테이블, 배너)
+ * ============================================================ */
+
+/* ── Layout Variables ── */
+:root {
+  --layout-breakpoint-desktop: 801px;
+  --layout-padding-mobile: 16px;
+  --layout-padding-desktop: 32px;
+  --layout-max-width-wide: 1080px;
+  --layout-max-width-narrow: 704px;
+}
+
+/* ── Page Container ──
+ * 최상위 페이지 래퍼. 전체 화면을 채우고 세로 스크롤.
+ */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  container-type: inline-size;
+  container-name: page;
+}
+
+/* ── Content Area ──
+ * 네비바 아래 메인 콘텐츠 영역. flex-grow로 남은 공간 채움.
+ */
+.page-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Section (패딩 적용 단위) ──
+ * 모듈별로 수평 패딩 적용. padding은 전역이 아닌 섹션 단위.
+ */
+.section-padded {
+  padding-left: var(--layout-padding-mobile);
+  padding-right: var(--layout-padding-mobile);
+}
+
+@media (min-width: 801px) {
+  .section-padded {
+    padding-left: var(--layout-padding-desktop);
+    padding-right: var(--layout-padding-desktop);
+  }
+}
+
+/* Container query: 디버그 시뮬레이션에서도 컨테이너 너비 기준으로 패딩 전환 */
+@container page (min-width: 801px) {
+  .section-padded {
+    padding-left: var(--layout-padding-desktop);
+    padding-right: var(--layout-padding-desktop);
+  }
+}
+@container page (max-width: 800px) {
+  .section-padded {
+    padding-left: var(--layout-padding-mobile);
+    padding-right: var(--layout-padding-mobile);
+  }
+}
+
+/* ── Max Width Containers ──
+ * 데스크톱에서 콘텐츠 최대 너비 제한. 가운데 정렬.
+ */
+.max-width-wide {
+  max-width: var(--layout-max-width-wide);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.max-width-narrow {
+  max-width: var(--layout-max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.max-width-full {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ── Desktop-only utilities ──
+ * desktop: 접두사 패턴 — 801px 이상에서만 활성화
+ */
+@media (min-width: 801px) {
+  .desktop\:show {
+    display: block !important;
+  }
+  .desktop\:hide {
+    display: none !important;
+  }
+  .desktop\:flex {
+    display: flex !important;
+  }
+}
+
+/* mobile default: desktop:show 대상은 기본 숨김 */
+.desktop\:show,
+.desktop\:flex {
+  display: none;
+}
+
+/* mobile default: desktop:hide 대상은 기본 표시 */
+.desktop\:hide {
+  display: block;
+}
+
+/* Container query: desktop:* 유틸리티도 컨테이너 너비 기준 */
+@container page (min-width: 801px) {
+  .desktop\:show {
+    display: block !important;
+  }
+  .desktop\:hide {
+    display: none !important;
+  }
+  .desktop\:flex {
+    display: flex !important;
+  }
+}
+@container page (max-width: 800px) {
+  .desktop\:show,
+  .desktop\:flex {
+    display: none !important;
+  }
+  .desktop\:hide {
+    display: block !important;
+  }
+}

@@ -1,0 +1,1298 @@
+{
+  "typography": {
+    "9/caption/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 9,
+      "fontWeight": 400,
+      "lineHeight": 10,
+      "letterSpacing": 0
+    },
+    "9/caption/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 9,
+      "fontWeight": 500,
+      "lineHeight": 10,
+      "letterSpacing": 0
+    },
+    "9/caption/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 9,
+      "fontWeight": 600,
+      "lineHeight": 10,
+      "letterSpacing": 0
+    },
+    "10/caption/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 10,
+      "fontWeight": 400,
+      "lineHeight": 12,
+      "letterSpacing": 0
+    },
+    "10/caption/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 10,
+      "fontWeight": 500,
+      "lineHeight": 12,
+      "letterSpacing": 0
+    },
+    "10/caption/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 10,
+      "fontWeight": 600,
+      "lineHeight": 12,
+      "letterSpacing": 0
+    },
+    "11/caption/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 11,
+      "fontWeight": 400,
+      "lineHeight": 14,
+      "letterSpacing": 0
+    },
+    "11/caption/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 11,
+      "fontWeight": 500,
+      "lineHeight": 14,
+      "letterSpacing": 0
+    },
+    "11/caption/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 11,
+      "fontWeight": 600,
+      "lineHeight": 14,
+      "letterSpacing": 0
+    },
+    "12/caption/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 12,
+      "fontWeight": 400,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "12/caption/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 12,
+      "fontWeight": 500,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "12/caption/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 12,
+      "fontWeight": 600,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    "13/body/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 13,
+      "fontWeight": 400,
+      "lineHeight": 18,
+      "letterSpacing": 0
+    },
+    "13/body/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 13,
+      "fontWeight": 500,
+      "lineHeight": 18,
+      "letterSpacing": 0
+    },
+    "13/body/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 13,
+      "fontWeight": 600,
+      "lineHeight": 18,
+      "letterSpacing": 0
+    },
+    "14/body/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "14/body/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "14/body/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 600,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "15/body/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 15,
+      "fontWeight": 400,
+      "lineHeight": 22,
+      "letterSpacing": 0
+    },
+    "15/body/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 15,
+      "fontWeight": 500,
+      "lineHeight": 22,
+      "letterSpacing": 0
+    },
+    "15/body/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 15,
+      "fontWeight": 600,
+      "lineHeight": 22,
+      "letterSpacing": 0
+    },
+    "15/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 15,
+      "fontWeight": 400,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "15/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 15,
+      "fontWeight": 500,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "15/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 15,
+      "fontWeight": 600,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    "16/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeight": 22,
+      "letterSpacing": 0
+    },
+    "16/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeight": 22,
+      "letterSpacing": 0
+    },
+    "16/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeight": 22,
+      "letterSpacing": 0
+    },
+    "17/body/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 17,
+      "fontWeight": 400,
+      "lineHeight": 26,
+      "letterSpacing": 0
+    },
+    "17/body/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 17,
+      "fontWeight": 500,
+      "lineHeight": 26,
+      "letterSpacing": 0
+    },
+    "17/body/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "lineHeight": 26,
+      "letterSpacing": 0
+    },
+    "17/body28/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 17,
+      "fontWeight": 400,
+      "lineHeight": 28,
+      "letterSpacing": 0
+    },
+    "17/body28/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 17,
+      "fontWeight": 500,
+      "lineHeight": 28,
+      "letterSpacing": 0
+    },
+    "17/body28/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 17,
+      "fontWeight": 600,
+      "lineHeight": 28,
+      "letterSpacing": 0
+    },
+    "18/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeight": 22,
+      "letterSpacing": -0.09
+    },
+    "18/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeight": 22,
+      "letterSpacing": -0.09
+    },
+    "18/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 600,
+      "lineHeight": 22,
+      "letterSpacing": -0.09
+    },
+    "20/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 400,
+      "lineHeight": 24,
+      "letterSpacing": -0.1
+    },
+    "20/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 500,
+      "lineHeight": 24,
+      "letterSpacing": -0.1
+    },
+    "20/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 600,
+      "lineHeight": 24,
+      "letterSpacing": -0.1
+    },
+    "24/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 24,
+      "fontWeight": 400,
+      "lineHeight": 28,
+      "letterSpacing": -0.12
+    },
+    "24/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 24,
+      "fontWeight": 500,
+      "lineHeight": 28,
+      "letterSpacing": -0.12
+    },
+    "24/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 24,
+      "fontWeight": 600,
+      "lineHeight": 28,
+      "letterSpacing": -0.12
+    },
+    "28/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 28,
+      "fontWeight": 400,
+      "lineHeight": 34,
+      "letterSpacing": -0.42
+    },
+    "28/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 28,
+      "fontWeight": 500,
+      "lineHeight": 34,
+      "letterSpacing": -0.42
+    },
+    "28/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 28,
+      "fontWeight": 600,
+      "lineHeight": 34,
+      "letterSpacing": -0.42
+    },
+    "32/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 32,
+      "fontWeight": 400,
+      "lineHeight": 38,
+      "letterSpacing": -0.48
+    },
+    "32/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 32,
+      "fontWeight": 500,
+      "lineHeight": 38,
+      "letterSpacing": -0.48
+    },
+    "32/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 32,
+      "fontWeight": 600,
+      "lineHeight": 38,
+      "letterSpacing": -0.48
+    },
+    "40/title/reg": {
+      "fontFamily": "Pretendard",
+      "fontSize": 40,
+      "fontWeight": 400,
+      "lineHeight": 48,
+      "letterSpacing": -0.6
+    },
+    "40/title/med": {
+      "fontFamily": "Pretendard",
+      "fontSize": 40,
+      "fontWeight": 500,
+      "lineHeight": 48,
+      "letterSpacing": -0.6
+    },
+    "40/title/semibold": {
+      "fontFamily": "Pretendard",
+      "fontSize": 40,
+      "fontWeight": 600,
+      "lineHeight": 48,
+      "letterSpacing": -0.6
+    }
+  },
+  "colors": {
+    "always/avatar/bg01": {
+      "hex": "#AA47BC"
+    },
+    "always/avatar/bg02": {
+      "hex": "#7A1FA2"
+    },
+    "always/avatar/bg03": {
+      "hex": "#7E57C2"
+    },
+    "always/avatar/bg04": {
+      "hex": "#512DA7"
+    },
+    "always/avatar/bg05": {
+      "hex": "#5C6BC0"
+    },
+    "always/avatar/bg06": {
+      "hex": "#0288D1"
+    },
+    "always/avatar/bg07": {
+      "hex": "#00579C"
+    },
+    "always/avatar/bg08": {
+      "hex": "#0098A6"
+    },
+    "always/avatar/bg09": {
+      "hex": "#00887A"
+    },
+    "always/avatar/bg10": {
+      "hex": "#689F39"
+    },
+    "always/avatar/bg11": {
+      "hex": "#33691E"
+    },
+    "always/avatar/bg12": {
+      "hex": "#004C3F"
+    },
+    "always/avatar/bg13": {
+      "hex": "#EC407A"
+    },
+    "always/avatar/bg14": {
+      "hex": "#C2175B"
+    },
+    "always/avatar/bg15": {
+      "hex": "#BF360C"
+    },
+    "always/avatar/bg16": {
+      "hex": "#F5511E"
+    },
+    "always/avatar/bg17": {
+      "hex": "#EF6C00"
+    },
+    "always/avatar/bg18": {
+      "hex": "#8C6E63"
+    },
+    "always/avatar/bg19": {
+      "hex": "#5D4038"
+    },
+    "always/avatar/bg20": {
+      "hex": "#78909C"
+    },
+    "always/avatar/bg21": {
+      "hex": "#465A65"
+    },
+    "always/black006-a": {
+      "hex": "#000000",
+      "opacity": 0.06
+    },
+    "always/black010-a": {
+      "hex": "#000000",
+      "opacity": 0.1
+    },
+    "always/black015-a": {
+      "hex": "#000000",
+      "opacity": 0.15
+    },
+    "always/black020-a": {
+      "hex": "#000000",
+      "opacity": 0.2
+    },
+    "always/black030-a": {
+      "hex": "#000000",
+      "opacity": 0.3
+    },
+    "always/black050-a": {
+      "hex": "#000000",
+      "opacity": 0.5
+    },
+    "always/black060-a": {
+      "hex": "#000000",
+      "opacity": 0.6
+    },
+    "always/black080-a": {
+      "hex": "#000000",
+      "opacity": 0.8
+    },
+    "always/black100": {
+      "hex": "#000000"
+    },
+    "always/grey-strong": {
+      "hex": "#232323"
+    },
+    "always/grey085": {
+      "hex": "#5C5C5C"
+    },
+    "always/lightgrey006-a": {
+      "hex": "#999999",
+      "opacity": 0.06
+    },
+    "always/lightgrey010-a": {
+      "hex": "#999999",
+      "opacity": 0.1
+    },
+    "always/lightgrey015-a": {
+      "hex": "#999999",
+      "opacity": 0.15
+    },
+    "always/lightgrey020-a": {
+      "hex": "#999999",
+      "opacity": 0.2
+    },
+    "always/lightgrey030-a": {
+      "hex": "#999999",
+      "opacity": 0.3
+    },
+    "always/lightgrey050-a": {
+      "hex": "#999999",
+      "opacity": 0.5
+    },
+    "always/lightgrey080-a": {
+      "hex": "#999999",
+      "opacity": 0.8
+    },
+    "always/lightgrey100": {
+      "hex": "#999999"
+    },
+    "always/palette05": {
+      "type": "gradient",
+      "stops": [
+        "#DB2667",
+        "#F4A368"
+      ]
+    },
+    "always/service/live-pop": {
+      "hex": "#DF3868"
+    },
+    "always/service/live-red": {
+      "hex": "#FF0000"
+    },
+    "always/service/mnet": {
+      "hex": "#FF477F",
+      "description": "엠넷전용컬러입니다."
+    },
+    "always/service/mnetapp": {
+      "hex": "#FF477F"
+    },
+    "always/service/point": {
+      "type": "gradient",
+      "stops": [
+        "#1CAC3C",
+        "#1CA6BB"
+      ]
+    },
+    "always/service/pop-ing": {
+      "type": "gradient",
+      "stops": [
+        "#DB2667",
+        "#F4A368"
+      ]
+    },
+    "always/service/popgrey-weak-a": {
+      "hex": "#707CA0",
+      "opacity": 0.06,
+      "description": "POP 백그라운드 영역 강조용"
+    },
+    "always/service/post-thumb-a": {
+      "hex": "#AA89F5",
+      "opacity": 0.8
+    },
+    "always/service/rankingpoll-thumb-a": {
+      "hex": "#FFADDD",
+      "opacity": 0.8
+    },
+    "always/service/red080-a": {
+      "hex": "#F5254A",
+      "opacity": 0.8
+    },
+    "always/service/survey": {
+      "hex": "#597EFF"
+    },
+    "always/service/survey-thumb-a": {
+      "hex": "#7192F5",
+      "opacity": 0.8
+    },
+    "always/service/ticket": {
+      "hex": "#00BF59"
+    },
+    "always/white006-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.06
+    },
+    "always/white010-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.1
+    },
+    "always/white015-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.15
+    },
+    "always/white020-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.2
+    },
+    "always/white030-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.3
+    },
+    "always/white050-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.5
+    },
+    "always/white060-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.6
+    },
+    "always/white080-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.8
+    },
+    "always/white100": {
+      "hex": "#FFFFFF"
+    },
+    "auto/icon/primary-on-dark": {
+      "hex": "#FFFFFF"
+    },
+    "auto/icon/primary-on-light": {
+      "hex": "#000000",
+      "opacity": 0.93
+    },
+    "auto/icon/secondary-on-dark": {
+      "hex": "#FFFFFF"
+    },
+    "auto/icon/secondary-on-light": {
+      "hex": "#000000",
+      "opacity": 0.73
+    },
+    "auto/text/primary-on-dark": {
+      "hex": "#FFFFFF"
+    },
+    "auto/text/primary-on-light": {
+      "hex": "#000000"
+    },
+    "auto/text/secondary-on-dark": {
+      "hex": "#FFFFFF",
+      "opacity": 0.8
+    },
+    "auto/text/secondary-on-light": {
+      "hex": "#000000",
+      "opacity": 0.8
+    },
+    "dark/bg/base": {
+      "hex": "#151515"
+    },
+    "dark/bg/blue-grey": {
+      "hex": "#1F2023"
+    },
+    "dark/bg/elevated": {
+      "hex": "#232323"
+    },
+    "dark/bg/grouped-strong": {
+      "hex": "#000000"
+    },
+    "dark/bg/grouped-weak": {
+      "hex": "#111111"
+    },
+    "dark/bg/grouped-weak-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.06
+    },
+    "dark/bg/highlight": {
+      "hex": "#2F2F2F"
+    },
+    "dark/bg/invert-weak-a": {
+      "hex": "#000000",
+      "opacity": 0.15
+    },
+    "dark/border/blue": {
+      "hex": "#0090FF"
+    },
+    "dark/border/blue-weak-a": {
+      "hex": "#0090FF",
+      "opacity": 0.3
+    },
+    "dark/border/default-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.1
+    },
+    "dark/border/divider-weaker": {
+      "hex": "#0D0D0D"
+    },
+    "dark/border/green": {
+      "hex": "#0BE06F"
+    },
+    "dark/border/green-weak-a": {
+      "hex": "#0BE06F",
+      "opacity": 0.3
+    },
+    "dark/border/grey": {
+      "hex": "#B3B3B3"
+    },
+    "dark/border/grey-weak-a": {
+      "hex": "#B3B3B3",
+      "opacity": 0.3
+    },
+    "dark/border/invert": {
+      "hex": "#0D0D0D"
+    },
+    "dark/border/red": {
+      "hex": "#FF4747"
+    },
+    "dark/border/red-weak-a": {
+      "hex": "#FF4747",
+      "opacity": 0.3
+    },
+    "dark/border/strong-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.2
+    },
+    "dark/border/stronger": {
+      "hex": "#EEEEEE"
+    },
+    "dark/border/weak-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.04
+    },
+    "dark/border/yellow": {
+      "hex": "#F5B625"
+    },
+    "dark/border/yellow-weak-a": {
+      "hex": "#F5B625",
+      "opacity": 0.3
+    },
+    "dark/icon/blue": {
+      "hex": "#0090FF"
+    },
+    "dark/icon/green": {
+      "hex": "#0BE06F"
+    },
+    "dark/icon/grey": {
+      "hex": "#B3B3B3"
+    },
+    "dark/icon/invert": {
+      "hex": "#0D0D0D",
+      "description": "모드의 배경색과 동일한 아이콘 색상을 사용하고자할때 사용"
+    },
+    "dark/icon/primary": {
+      "hex": "#FFFFFF"
+    },
+    "dark/icon/quaternary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.3
+    },
+    "dark/icon/red": {
+      "hex": "#FF4747"
+    },
+    "dark/icon/secondary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.73
+    },
+    "dark/icon/tertiary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.5
+    },
+    "dark/icon/yellow": {
+      "hex": "#F5B625"
+    },
+    "dark/overlay/hover-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.08
+    },
+    "dark/overlay/hover-grey-a": {
+      "hex": "#454545",
+      "opacity": 0.1
+    },
+    "dark/overlay/press-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.2
+    },
+    "dark/overlay/press-grey-a": {
+      "hex": "#454545",
+      "opacity": 0.15
+    },
+    "dark/service/live": {
+      "hex": "#E51A42"
+    },
+    "dark/service/live-weak-a": {
+      "hex": "#E51A42",
+      "opacity": 0.15
+    },
+    "dark/service/membership": {
+      "hex": "#FFBF00"
+    },
+    "dark/service/membership-weak-a": {
+      "hex": "#FFBF00",
+      "opacity": 0.12
+    },
+    "dark/service/noti": {
+      "hex": "#0C198B"
+    },
+    "dark/service/pop-bg": {
+      "type": "gradient",
+      "stops": [
+        "#3B3A2D",
+        "#232732"
+      ]
+    },
+    "dark/surface/card": {
+      "hex": "#232323"
+    },
+    "dark/surface/display-bar-bottom": {
+      "hex": "#151515"
+    },
+    "dark/surface/display-bar-top": {
+      "hex": "#151515"
+    },
+    "dark/surface/display-lock": {
+      "hex": "#2F2F2F"
+    },
+    "dark/surface/form-blue": {
+      "hex": "#0090FF"
+    },
+    "dark/surface/form-blue-weak-a": {
+      "hex": "#0F97FF",
+      "opacity": 0.12
+    },
+    "dark/surface/form-gradient-h": {
+      "type": "gradient",
+      "stops": [
+        "#151515",
+        "#151515"
+      ],
+      "description": "PD only - 좌우그라데이션"
+    },
+    "dark/surface/form-green": {
+      "hex": "#00CC5F"
+    },
+    "dark/surface/form-green-weak-a": {
+      "hex": "#0BE06F",
+      "opacity": 0.08
+    },
+    "dark/surface/form-grey": {
+      "hex": "#7A7A7A"
+    },
+    "dark/surface/form-grey-weak-a": {
+      "hex": "#B3B3B3",
+      "opacity": 0.08
+    },
+    "dark/surface/form-inverted": {
+      "hex": "#F7F7F7",
+      "description": "강조하고싶은 영역에 반전버튼으로 쓰입니다."
+    },
+    "dark/surface/form-inverted-deep": {
+      "hex": "#FFFFFF"
+    },
+    "dark/surface/form-primary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.06
+    },
+    "dark/surface/form-red": {
+      "hex": "#FF4747"
+    },
+    "dark/surface/form-red-weak-a": {
+      "hex": "#FF4747",
+      "opacity": 0.12
+    },
+    "dark/surface/form-secondary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.04
+    },
+    "dark/surface/form-yellow": {
+      "hex": "#F5B625"
+    },
+    "dark/surface/form-yellow-weak-a": {
+      "hex": "#F5B625",
+      "opacity": 0.08
+    },
+    "dark/text/blue": {
+      "hex": "#0090FF"
+    },
+    "dark/text/green": {
+      "hex": "#0BE06F"
+    },
+    "dark/text/grey": {
+      "hex": "#B3B3B3"
+    },
+    "dark/text/invert-a": {
+      "hex": "#000000",
+      "opacity": 0.93
+    },
+    "dark/text/primary": {
+      "hex": "#EEEEEE",
+      "description": "text-primary 가장 위계가 높은 텍스트 컬러. 기본으로 사용하며 타이틀, 본문 등에 사용"
+    },
+    "dark/text/primary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.93
+    },
+    "dark/text/quaternary": {
+      "hex": "#777777"
+    },
+    "dark/text/quaternary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.5
+    },
+    "dark/text/red": {
+      "hex": "#FF4747"
+    },
+    "dark/text/secondary": {
+      "hex": "#BABABA"
+    },
+    "dark/text/secondary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.73
+    },
+    "dark/text/tertiary": {
+      "hex": "#999999"
+    },
+    "dark/text/tertiary-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.6
+    },
+    "dark/text/yellow": {
+      "hex": "#F5B625"
+    },
+    "light/bg/base": {
+      "hex": "#FFFFFF",
+      "description": "상세 페이지 등에서 필요한 경우 사용하는 base 컬러"
+    },
+    "light/bg/blue-grey": {
+      "hex": "#EFF1F7"
+    },
+    "light/bg/elevated": {
+      "hex": "#FFFFFF",
+      "description": "modal, popper, drawer, menu 등의 base보다 z-index 상 상위의 컴포넌트에 사용"
+    },
+    "light/bg/grouped-strong": {
+      "hex": "#F7F7F7"
+    },
+    "light/bg/grouped-weak": {
+      "hex": "#F7F7F7"
+    },
+    "light/bg/grouped-weak-a": {
+      "hex": "#000000",
+      "opacity": 0.06
+    },
+    "light/bg/highlight": {
+      "hex": "#E6E6E6"
+    },
+    "light/bg/invert-weak-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.15
+    },
+    "light/border/blue": {
+      "hex": "#148AFF",
+      "description": "action, 강조되어야 하는 정보 또는 완료, 긍정의 컴포넌트에 사용하는 border color"
+    },
+    "light/border/blue-weak-a": {
+      "hex": "#148AFF",
+      "opacity": 0.3
+    },
+    "light/border/default-a": {
+      "hex": "#000000",
+      "opacity": 0.1,
+      "description": "surface를 감싸는 border 기본값의 컬러"
+    },
+    "light/border/divider-weaker": {
+      "hex": "#F7F7F7"
+    },
+    "light/border/green": {
+      "hex": "#00B84D"
+    },
+    "light/border/green-weak-a": {
+      "hex": "#00B84D",
+      "opacity": 0.3
+    },
+    "light/border/grey": {
+      "hex": "#7A7A7A"
+    },
+    "light/border/grey-weak-a": {
+      "hex": "#7A7A7A",
+      "opacity": 0.3
+    },
+    "light/border/invert": {
+      "hex": "#FFFFFF"
+    },
+    "light/border/red": {
+      "hex": "#FF4A40",
+      "description": "error, warning, critical한 컴포넌트에 사용하는 border color"
+    },
+    "light/border/red-weak-a": {
+      "hex": "#FF4A40",
+      "opacity": 0.3
+    },
+    "light/border/strong-a": {
+      "hex": "#000000",
+      "opacity": 0.2
+    },
+    "light/border/stronger": {
+      "hex": "#454545"
+    },
+    "light/border/weak-a": {
+      "hex": "#000000",
+      "opacity": 0.06
+    },
+    "light/border/yellow": {
+      "hex": "#F29900"
+    },
+    "light/border/yellow-weak-a": {
+      "hex": "#F29900",
+      "opacity": 0.3
+    },
+    "light/icon/blue": {
+      "hex": "#148AFF",
+      "description": "action, 강조되어야 하는 정보 또는 완료, 긍정의 의미를 가진 아이콘에 사용"
+    },
+    "light/icon/green": {
+      "hex": "#00B84D"
+    },
+    "light/icon/grey": {
+      "hex": "#7A7A7A"
+    },
+    "light/icon/invert": {
+      "hex": "#FFFFFF",
+      "description": "모드의 배경색과 동일한 아이콘 색상을 사용하고자할때 사용"
+    },
+    "light/icon/primary": {
+      "hex": "#000000",
+      "description": "가장 위계가 높은 아이콘 컬러. 시각적으로 명료하게 보여야하는 아이콘에 사용"
+    },
+    "light/icon/quaternary-a": {
+      "hex": "#000000",
+      "opacity": 0.3,
+      "description": "네번째 위계의 아이콘 컬러로, select/unselect의 상태가 명확하게 구분되어야 할때 unselected 상태로 사용하거나, guide에 활용"
+    },
+    "light/icon/red": {
+      "hex": "#FF4A40",
+      "description": "error, warning, critical한 메시지가 필요한 아이콘에 사용"
+    },
+    "light/icon/secondary-a": {
+      "hex": "#000000",
+      "opacity": 0.73
+    },
+    "light/icon/tertiary-a": {
+      "hex": "#000000",
+      "opacity": 0.5,
+      "description": "두번째 위계의 아이콘 컬러로, 주로 버튼 내에 있는 아이콘에 사용"
+    },
+    "light/icon/yellow": {
+      "hex": "#F29900"
+    },
+    "light/overlay/hover-a": {
+      "hex": "#000000",
+      "opacity": 0.1,
+      "description": "form component에 hover효과를 주기 위해 컬러값을 추가하는 경우 사용"
+    },
+    "light/overlay/hover-grey-a": {
+      "hex": "#454545",
+      "opacity": 0.1
+    },
+    "light/overlay/press-a": {
+      "hex": "#000000",
+      "opacity": 0.15
+    },
+    "light/overlay/press-grey-a": {
+      "hex": "#454545",
+      "opacity": 0.15
+    },
+    "light/service/live": {
+      "hex": "#E2012D"
+    },
+    "light/service/live-weak-a": {
+      "hex": "#E2012D",
+      "opacity": 0.3
+    },
+    "light/service/membership": {
+      "hex": "#FFB010"
+    },
+    "light/service/membership-weak-a": {
+      "hex": "#EB9100",
+      "opacity": 0.12
+    },
+    "light/service/noti": {
+      "hex": "#020F81"
+    },
+    "light/service/pop-bg": {
+      "type": "gradient",
+      "stops": [
+        "#FAF7DE",
+        "#E7EDFD"
+      ]
+    },
+    "light/surface/card": {
+      "hex": "#FFFFFF"
+    },
+    "light/surface/display-bar-bottom": {
+      "hex": "#FDFDFD"
+    },
+    "light/surface/display-bar-top": {
+      "hex": "#FFFFFF"
+    },
+    "light/surface/display-lock": {
+      "hex": "#BFBFBF"
+    },
+    "light/surface/form-blue": {
+      "hex": "#148AFF"
+    },
+    "light/surface/form-blue-weak-a": {
+      "hex": "#007AFF",
+      "opacity": 0.15
+    },
+    "light/surface/form-gradient-h": {
+      "type": "gradient",
+      "stops": [
+        "#FFFFFF",
+        "#FFFFFF"
+      ],
+      "description": "PD only"
+    },
+    "light/surface/form-green": {
+      "hex": "#00BF59"
+    },
+    "light/surface/form-green-weak-a": {
+      "hex": "#00B84D",
+      "opacity": 0.15
+    },
+    "light/surface/form-grey": {
+      "hex": "#999999"
+    },
+    "light/surface/form-grey-weak-a": {
+      "hex": "#666666",
+      "opacity": 0.12
+    },
+    "light/surface/form-inverted": {
+      "hex": "#151515",
+      "description": "강조하고싶은 영역에 반전버튼으로 쓰입니다."
+    },
+    "light/surface/form-inverted-deep": {
+      "hex": "#000000"
+    },
+    "light/surface/form-primary-a": {
+      "hex": "#000000",
+      "opacity": 0.06
+    },
+    "light/surface/form-red": {
+      "hex": "#FF4A40"
+    },
+    "light/surface/form-red-weak-a": {
+      "hex": "#FF4A40",
+      "opacity": 0.15
+    },
+    "light/surface/form-secondary-a": {
+      "hex": "#000000",
+      "opacity": 0.04
+    },
+    "light/surface/form-yellow": {
+      "hex": "#F29900"
+    },
+    "light/surface/form-yellow-weak-a": {
+      "hex": "#F29900",
+      "opacity": 0.12
+    },
+    "light/text/blue": {
+      "hex": "#148AFF",
+      "description": "action, 강조되어야 하는 정보 또는 완료, 긍정의 메시지에 사용"
+    },
+    "light/text/green": {
+      "hex": "#00B84D"
+    },
+    "light/text/grey": {
+      "hex": "#666666"
+    },
+    "light/text/invert-a": {
+      "hex": "#FFFFFF",
+      "opacity": 0.93
+    },
+    "light/text/primary": {
+      "hex": "#151515",
+      "description": "text-primary 가장 위계가 높은 텍스트 컬러. 기본으로 사용하며 타이틀, 본문 등에 사용"
+    },
+    "light/text/primary-a": {
+      "hex": "#000000",
+      "opacity": 0.93
+    },
+    "light/text/quaternary": {
+      "hex": "#999999"
+    },
+    "light/text/quaternary-a": {
+      "hex": "#000000",
+      "opacity": 0.5
+    },
+    "light/text/red": {
+      "hex": "#FF4A40",
+      "description": "error, warning, critical한 메시지에 사용"
+    },
+    "light/text/secondary": {
+      "hex": "#454545",
+      "description": "두번째 위계의 텍스트 컬러로, body 또는 버튼 내 텍스트에 사용"
+    },
+    "light/text/secondary-a": {
+      "hex": "#000000",
+      "opacity": 0.73
+    },
+    "light/text/tertiary": {
+      "hex": "#666666"
+    },
+    "light/text/tertiary-a": {
+      "hex": "#000000",
+      "opacity": 0.6,
+      "description": "세번째 위계의 텍스트 컬러로, 덜 중요한 guide나 disabled 메시지에 사용"
+    },
+    "light/text/yellow": {
+      "hex": "#F29900"
+    },
+    "picker/button": {
+      "hex": "#654BFF"
+    },
+    "picker/button-weak-a": {
+      "hex": "#654BFF",
+      "opacity": 0.15
+    },
+    "picker/on-button": {
+      "hex": "#FFFFFF",
+      "description": "글로벌 버튼의 위에 올라가는 텍스트,아이콘등에 쓰이는 컬러"
+    },
+    "picker/star": {
+      "hex": "#7266FF"
+    },
+    "pop/bg/TL01": {
+      "hex": "#C9D0EA"
+    },
+    "pop/bg/TL02": {
+      "hex": "#F2DE6F"
+    },
+    "pop/bg/TL03": {
+      "hex": "#FCA783"
+    },
+    "pop/bg/TL04": {
+      "hex": "#A0DDA6"
+    },
+    "pop/bg/TL05": {
+      "hex": "#A2BCE3"
+    },
+    "pop/bg/TL06": {
+      "hex": "#F7B3CF"
+    },
+    "pop/bg/TL07": {
+      "hex": "#BFA2E3"
+    },
+    "pop/bg/TL08": {
+      "hex": "#FB8686"
+    },
+    "pop/bg/TL09": {
+      "hex": "#EEC2C2"
+    },
+    "pop/bg/TL10": {
+      "hex": "#E2D1B0"
+    },
+    "pop/bubble/TL01": {
+      "hex": "#D5AD0C"
+    },
+    "pop/bubble/TL03": {
+      "hex": "#E3703F"
+    },
+    "pop/bubble/TL04": {
+      "hex": "#5FAC70"
+    },
+    "pop/bubble/TL05": {
+      "hex": "#587AB1"
+    },
+    "pop/bubble/TL06": {
+      "hex": "#CA7094"
+    },
+    "pop/bubble/TL07": {
+      "hex": "#8067B5"
+    },
+    "pop/bubble/TL08": {
+      "hex": "#CB4E4E"
+    },
+    "pop/bubble/TL09": {
+      "hex": "#CB8181"
+    },
+    "pop/bubble/TL1-": {
+      "hex": "#A79272"
+    },
+    "pop/item/gradient01": {
+      "type": "gradient",
+      "stops": [
+        "#FBF3AC",
+        "#FFE1FC"
+      ]
+    },
+    "pop/item/gradient02": {
+      "type": "gradient",
+      "stops": [
+        "#CBE6FF",
+        "#D5FFDF"
+      ]
+    },
+    "pop/item/gradient03": {
+      "type": "gradient",
+      "stops": [
+        "#E4CEFF",
+        "#FFE4CC"
+      ]
+    },
+    "pop/item/gradient04": {
+      "type": "gradient",
+      "stops": [
+        "#FFDCB3",
+        "#C9F8FF"
+      ]
+    },
+    "pop/item/gradient05": {
+      "type": "gradient",
+      "stops": [
+        "#FFD0EC",
+        "#D3FCFF"
+      ]
+    },
+    "pop/item/gradient06": {
+      "type": "gradient",
+      "stops": [
+        "#FEB5B5",
+        "#D6FEE1"
+      ]
+    }
+  }
+}
