@@ -29,13 +29,17 @@ jobs:
 
       - run: npm ci
 
+      - run: npm run build
+
       - run: npm run build-storybook
+
+      - run: mv storybook-static dist/storybook
 
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: storybook-static
+          path: dist
 
       - id: deployment
         uses: actions/deploy-pages@v4
