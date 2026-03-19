@@ -146,7 +146,7 @@ function App() {
     : { left: 16, top: 16 };
 
   return (
-    <div style={{ height: "100vh", height: "100dvh", overflow: "hidden" }}>
+    <div style={{ minHeight: "100vh", minHeight: "100dvh" }}>
       {/* Page — 전체 화면 */}
       <ThankYouPage
         theme={theme}

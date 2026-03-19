@@ -561,7 +561,7 @@ export default function ThankYouPage({
       />
 
       {/* Content — 자연스러운 스크롤, GNB/하단버튼 영역만큼 패딩 */}
-      <div style={{ paddingTop: gnbHeight, paddingBottom: actionHeight }}>
+      <div style={{ paddingTop: gnbHeight, paddingBottom: actionHeight + 40 }}>
         <Section maxWidth="narrow" padded>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {/* Success header */}
